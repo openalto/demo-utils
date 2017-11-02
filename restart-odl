@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo 'Stoping ODL...'
+systemctl stop opendaylight
+echo 'Cheanup ODL state...'
+rm -rf /opt/opendaylight/data /opt/opendaylight/snapshots /opt/opendaylight/journal /opt/opendaylight/deploy/*.kar
+echo 'Starting ODL...'
+systemctl start opendaylight
+echo 'Waiting for ODL ready...'
+sleep 20
+echo 'ready'
+echo 'Installing DLUX UI...'
+ssh -p 8101 karaf@localhost 'feature:install odl-dluxapps-applications'
+echo 'Installing ALTO SPCE...'
+ssh -p 8101 karaf@localhost 'feature:install odl-alto-spce'

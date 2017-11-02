@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp /root/alto-experimental/features/target/alto-experimental-features-0.1.0-SNAPSHOT.kar /opt/opendaylight/deploy/
