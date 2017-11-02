@@ -1,5 +1,11 @@
 # Some Utility Scripts for Demo Setup
 
+## Install Dependencies
+
+``` bash
+pip install -r requirements.txt
+```
+
 ## Flow Management
 
 Download all the scripts into the same directory and run the following command on the controller host:
@@ -20,6 +26,8 @@ CONTROLLER_IP=10.0.0.100 # For example
 ```
 
 ## Execute Remote Command
+
+> **NOTE:** Python 2 Only!
 
 Allow you to execute some command remotely via ssh interactive mode.
 

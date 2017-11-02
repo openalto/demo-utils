@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 from __future__ import print_function
 import paramiko
@@ -28,10 +28,11 @@ def execute_remote(command, ip='localhost', port=8101, username='karaf', passwor
                 resp = sh.recv(9999)
                 buff += resp
         except:
-            new_buff = re.compile(r'(\x9B|\x1B\[)[0-?]*[ -/]*[@-~].*\n$').sub('', buff).replace('\b', '').replace('\r', '')
-            newnewbuff = re.compile(r'.*>$').sub('', new_buff)
-            newnewnewbuff = re.compile(r'.*{}.*'.format(command)).sub('', newnewbuff)
-            print(newnewnewbuff.strip('\n'))
+            # new_buff = re.compile(r'(\x9B|\x1B\[)[0-?]*[ -/]*[@-~].*\n$').sub('', buff).replace('\b', '').replace('\r', '')
+            # newnewbuff = re.compile(r'.*>$').sub('', new_buff)
+            # newnewnewbuff = re.compile(r'.*{}.*'.format(command)).sub('', newnewbuff)
+            # print(newnewnewbuff.strip('\n'))
+            print(buff)
             break
 
 def parse_argument():
