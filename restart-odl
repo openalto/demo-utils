@@ -10,6 +10,7 @@ echo 'Waiting for ODL ready...'
 sleep 20
 echo 'ready'
 echo 'Installing DLUX UI...'
-ssh -p 8101 karaf@localhost 'feature:install odl-dluxapps-applications'
+./execute_remote.py 'feature:install odl-dlux-all'
 echo 'Installing ALTO SPCE...'
-ssh -p 8101 karaf@localhost 'feature:install odl-alto-spce'
+./execute_remote.py 'feature:install odl-alto-spce'
+./disable-proactive-flood.sh
