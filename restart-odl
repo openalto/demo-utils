@@ -13,4 +13,6 @@ echo 'Installing DLUX UI...'
 ./execute_remote.py 'feature:install odl-dlux-all'
 echo 'Installing ALTO SPCE...'
 ./execute_remote.py 'feature:install odl-alto-spce'
+sleep 20
 ./disable-proactive-flood.sh
+python3 ofstabilizer.py localhost
