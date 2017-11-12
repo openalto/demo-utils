@@ -1,12 +1,10 @@
 FROM opendaylight/odl:5.4.0
 LABEL maintainer "Jensen Zhang <hack@jensen-zhang.site>"
 
-# Install Java and Maven` \
-RUN apt-get install \
-        --yes \
-        --no-install-recommends \
-        --no-install-suggests \
-        curl git zip unzip \
+# Install Dependencies
+RUN yum -y --setopt=tsflags=nodocs update \
+    && yum -y --setopt=tsflags=nodocs install epel-release \
+    && yum -y --setopt=tsflags=nodocs install curl git zip unzip \
     && curl -LO -H "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u151-b12/jdk-8u151-linux-x64.tar.gz \
     && mkdir /opt/jdk \
     && tar -zxf jdk-8u151-linux-x64.tar.gz -C /opt/jdk \
@@ -30,7 +28,7 @@ RUN apt-get install \
     && mvn clean package \
     && cp target/unicorn-server.war /opt/ \
     && curl -L -o /opt/jetty-runner.jar http://central.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.4.7.v20170914/jetty-runner-9.4.7.v20170914.jar \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && yum clean all && rm -rf /tmp/* /var/tmp/*
 
 COPY docker-entry-point /docker-entry-point
 RUN chmod 755 /docker-entry-point
