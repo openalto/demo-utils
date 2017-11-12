@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  unicorn-server:
+    image: fno2010/unicorn-server
+    hostname: unicorn-server
+    container_name: unicorn-server
+    ports:
+    - "6633:6633"
+    - "80:9000"
+    volumes:
+    - "config/web.xml:/opt/unicorn-server/WEB-INF/web.xml"
+    - "config/server.json:/opt/unicorn-server/WEB-INF/classes/server.json"
+    - "config/adapter.json:/opt/unicorn-server/WEB-INF/classes/adapter/mock.json"
+    - "config/orchestrator.json:/opt/unicorn-server/WEB-INF/classes/orchestrator/orchestrator.json"

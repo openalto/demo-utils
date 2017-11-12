@@ -6,11 +6,11 @@
 # TODO: install alto-unicorn
 
 # Update web.xml for unicorn-server
-unzip /opt/unicorn-server.war WEB-INF/web.xml -d /tmp/
-sed -i 's_<param-value>mock</param-value>_<param-value>odl</param-value>_' /tmp/WEB-INF/web.xml
-zip -b /tmp -u /opt/unicorn-server.war WEB-INF/web.xml
+# unzip /opt/unicorn-server.war WEB-INF/web.xml -d /tmp/
+# sed -i 's_<param-value>mock</param-value>_<param-value>odl</param-value>_' /tmp/WEB-INF/web.xml
+# zip -b /tmp -u /opt/unicorn-server.war WEB-INF/web.xml
 
 # TODO: Update unicorn domain registration config
 
 # Start unicorn-server
-java -jar /opt/jetty-runner.jar --port 80 --log /var/log/jetty.log /opt/unicorn-server.war
+java -jar /opt/jetty-runner.jar --port 80 --log /var/log/jetty.log /opt/unicorn-server
