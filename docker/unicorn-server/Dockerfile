@@ -11,14 +11,15 @@ RUN yum -y --setopt=tsflags=nodocs update \
     && tar -zxf apache-maven-3.3.9-bin.tar.gz -C /opt \
     && ln -s /opt/apache-maven-3.3.9/bin/mvn /usr/bin/mvn \
     && mkdir -p /root/.m2 \
-    && curl -L https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > /root/.m2/settings.xml \
+    && curl -sSL https://raw.githubusercontent.com/opendaylight/odlparent/master/settings.xml > /root/.m2/settings.xml \
     && git clone https://github.com/openalto/alto-experimental -b odl-boron-sr4 \
     && cd alto-experimental \
     && mvn clean install -Ptest -DskipTests \
-    && unzip alto-bwmonitor/features/target/alto-bwmonitor-*.kar repository/* \
-    && unzip alto-pathmanager/features/target/alto-pathmanager-*.kar repository/* \
-    && unzip alto-unicorn/features/target/alto-unicorn-*.kar repository/* \
+    && unzip alto-bwmonitor/features/target/alto-bwmonitor-*.kar 'repository/*' \
+    && unzip alto-pathmanager/features/target/alto-pathmanager-*.kar 'repository/*' \
+    && unzip alto-unicorn/features/target/alto-unicorn-*.kar 'repository/*' \
     && cp -r repository/* /opt/opendaylight/system/ \
+    && chown -R odl:odl /opt/opendaylight/system/ \
     && cd .. \
     && git clone https://github.com/openalto/alto-nova \
     && cd alto-nova \
@@ -30,7 +31,7 @@ RUN yum -y --setopt=tsflags=nodocs update \
     && mvn clean package \
     && cp target/unicorn-server.war /opt/ \
     && cp -r target/unicorn-server /opt/ \
-    && curl -L -o /opt/jetty-runner.jar http://central.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.4.7.v20170914/jetty-runner-9.4.7.v20170914.jar \
+    && curl -sSL -o /opt/jetty-runner.jar http://central.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.4.7.v20170914/jetty-runner-9.4.7.v20170914.jar \
     && yum clean all && rm -rf /tmp/* /var/tmp/* /root/.m2/repository/*
 
 COPY docker-entry-point /docker-entry-point
