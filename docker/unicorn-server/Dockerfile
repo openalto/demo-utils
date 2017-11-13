@@ -23,7 +23,7 @@ RUN yum -y --setopt=tsflags=nodocs update \
     && cd .. \
     && git clone https://github.com/openalto/alto-nova \
     && cd alto-nova \
-    && pip3 install -r requirements \
+    && pip3 install -r requirements.txt \
     && python3 setup.py install \
     && cd .. \
     && git clone https://github.com/openalto/alto-domain-agent -b demo-special \
