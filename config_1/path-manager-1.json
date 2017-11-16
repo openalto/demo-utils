@@ -1,0 +1,8 @@
+{
+        "path":
+            {
+                "id": 1, "priority": 1,
+                "flow-desc": {"src-ip": "10.10.15.18/32", "dst-ip": "10.10.15.19/32"},
+                "links":[{"link":"host:e4:1d:2d:fd:c4:e4/openflow:365545302427456:237"}, {"link":"openflow:365545302427456:225"}, {"link":"openflow:281483178111737:53/host:f4:52:14:10:10:b0"}]
+            }
+}
