@@ -2,6 +2,86 @@
     "network-topology": {
         "topology": [
             {
+                "link": [
+                    {
+                        "destination": {
+                            "dest-node": "openflow:5",
+                            "dest-tp": "openflow:5:1"
+                        },
+                        "link-id": "host:00:00:00:00:00:04/openflow:5:1",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:04",
+                            "source-tp": "host:00:00:00:00:00:04"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:5",
+                            "dest-tp": "openflow:5:2"
+                        },
+                        "link-id": "openflow:10:3",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:3"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:04",
+                            "dest-tp": "host:00:00:00:00:00:04"
+                        },
+                        "link-id": "openflow:5:1/host:00:00:00:00:00:04",
+                        "source": {
+                            "source-node": "openflow:5",
+                            "source-tp": "openflow:5:1"
+                        }
+                    }
+                ],
+                "node": [
+                    {
+                        "node-id": "openflow:5",
+                        "opendaylight-topology-inventory:inventory-node-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']",
+                        "termination-point": [
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:5:LOCAL']",
+                                "tp-id": "openflow:5:LOCAL"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:5:1']",
+                                "tp-id": "openflow:5:1"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:5:2']",
+                                "tp-id": "openflow:5:2"
+                            }
+                        ]
+                    },
+                    {
+                        "host-tracker-service:addresses": [
+                            {
+                                "first-seen": 1510857728339,
+                                "id": 0,
+                                "ip": "10.0.5.101",
+                                "last-seen": 1510857728339,
+                                "mac": "00:00:00:00:00:04"
+                            }
+                        ],
+                        "host-tracker-service:attachment-points": [
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:04",
+                                "tp-id": "openflow:5:1"
+                            }
+                        ],
+                        "host-tracker-service:id": "00:00:00:00:00:04",
+                        "node-id": "host:00:00:00:00:00:04",
+                        "termination-point": [
+                            {
+                                "tp-id": "host:00:00:00:00:00:04"
+                            }
+                        ]
+                    }
+                ],
                 "topology-id": "flow:1"
             }
         ]

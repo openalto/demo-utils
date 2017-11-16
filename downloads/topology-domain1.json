@@ -2,6 +2,86 @@
     "network-topology": {
         "topology": [
             {
+                "link": [
+                    {
+                        "destination": {
+                            "dest-node": "openflow:12",
+                            "dest-tp": "openflow:12:2"
+                        },
+                        "link-id": "openflow:9:3",
+                        "source": {
+                            "source-node": "openflow:9",
+                            "source-tp": "openflow:9:3"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:12",
+                            "dest-tp": "openflow:12:1"
+                        },
+                        "link-id": "host:00:00:00:00:00:01/openflow:12:1",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:01",
+                            "source-tp": "host:00:00:00:00:00:01"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:01",
+                            "dest-tp": "host:00:00:00:00:00:01"
+                        },
+                        "link-id": "openflow:12:1/host:00:00:00:00:00:01",
+                        "source": {
+                            "source-node": "openflow:12",
+                            "source-tp": "openflow:12:1"
+                        }
+                    }
+                ],
+                "node": [
+                    {
+                        "host-tracker-service:addresses": [
+                            {
+                                "first-seen": 1510857730412,
+                                "id": 0,
+                                "ip": "10.0.1.101",
+                                "last-seen": 1510857730412,
+                                "mac": "00:00:00:00:00:01"
+                            }
+                        ],
+                        "host-tracker-service:attachment-points": [
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:01",
+                                "tp-id": "openflow:12:1"
+                            }
+                        ],
+                        "host-tracker-service:id": "00:00:00:00:00:01",
+                        "node-id": "host:00:00:00:00:00:01",
+                        "termination-point": [
+                            {
+                                "tp-id": "host:00:00:00:00:00:01"
+                            }
+                        ]
+                    },
+                    {
+                        "node-id": "openflow:12",
+                        "opendaylight-topology-inventory:inventory-node-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:12']",
+                        "termination-point": [
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:12']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:12:1']",
+                                "tp-id": "openflow:12:1"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:12']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:12:LOCAL']",
+                                "tp-id": "openflow:12:LOCAL"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:12']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:12:2']",
+                                "tp-id": "openflow:12:2"
+                            }
+                        ]
+                    }
+                ],
                 "topology-id": "flow:1"
             }
         ]

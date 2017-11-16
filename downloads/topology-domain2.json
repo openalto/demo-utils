@@ -24,6 +24,17 @@
                             "source-node": "host:00:00:00:00:00:02",
                             "source-tp": "host:00:00:00:00:00:02"
                         }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:7",
+                            "dest-tp": "openflow:7:2"
+                        },
+                        "link-id": "openflow:9:4",
+                        "source": {
+                            "source-node": "openflow:9",
+                            "source-tp": "openflow:9:4"
+                        }
                     }
                 ],
                 "node": [
@@ -48,10 +59,10 @@
                     {
                         "host-tracker-service:addresses": [
                             {
-                                "first-seen": 1510857089121,
+                                "first-seen": 1510857728415,
                                 "id": 0,
                                 "ip": "10.0.2.101",
-                                "last-seen": 1510857089121,
+                                "last-seen": 1510857728415,
                                 "mac": "00:00:00:00:00:02"
                             }
                         ],

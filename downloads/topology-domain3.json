@@ -2,6 +2,446 @@
     "network-topology": {
         "topology": [
             {
+                "link": [
+                    {
+                        "destination": {
+                            "dest-node": "openflow:9",
+                            "dest-tp": "openflow:9:2"
+                        },
+                        "link-id": "openflow:10:1",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:1"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:2"
+                        },
+                        "link-id": "openflow:11:2",
+                        "source": {
+                            "source-node": "openflow:11",
+                            "source-tp": "openflow:11:2"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:9",
+                            "dest-tp": "openflow:9:1"
+                        },
+                        "link-id": "openflow:11:1",
+                        "source": {
+                            "source-node": "openflow:11",
+                            "source-tp": "openflow:11:1"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:11",
+                            "dest-tp": "openflow:11:2"
+                        },
+                        "link-id": "openflow:10:2",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:2"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:3"
+                        },
+                        "link-id": "openflow:5:2",
+                        "source": {
+                            "source-node": "openflow:5",
+                            "source-tp": "openflow:5:2"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:9",
+                            "dest-tp": "openflow:9:2"
+                        },
+                        "link-id": "host:00:00:00:00:00:03/openflow:9:2",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:03",
+                            "source-tp": "host:00:00:00:00:00:03"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:01",
+                            "dest-tp": "host:00:00:00:00:00:01"
+                        },
+                        "link-id": "openflow:10:4/host:00:00:00:00:00:01",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:4"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:11",
+                            "dest-tp": "openflow:11:1"
+                        },
+                        "link-id": "openflow:9:1",
+                        "source": {
+                            "source-node": "openflow:9",
+                            "source-tp": "openflow:9:1"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:9",
+                            "dest-tp": "openflow:9:4"
+                        },
+                        "link-id": "openflow:7:2",
+                        "source": {
+                            "source-node": "openflow:7",
+                            "source-tp": "openflow:7:2"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:02",
+                            "dest-tp": "host:00:00:00:00:00:02"
+                        },
+                        "link-id": "openflow:10:4/host:00:00:00:00:00:02",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:4"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:4"
+                        },
+                        "link-id": "host:00:00:00:00:00:02/openflow:10:4",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:02",
+                            "source-tp": "host:00:00:00:00:00:02"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:03",
+                            "dest-tp": "host:00:00:00:00:00:03"
+                        },
+                        "link-id": "openflow:10:4/host:00:00:00:00:00:03",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:4"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:04",
+                            "dest-tp": "host:00:00:00:00:00:04"
+                        },
+                        "link-id": "openflow:10:4/host:00:00:00:00:00:04",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:4"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:1"
+                        },
+                        "link-id": "openflow:9:2",
+                        "source": {
+                            "source-node": "openflow:9",
+                            "source-tp": "openflow:9:2"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:03",
+                            "dest-tp": "host:00:00:00:00:00:03"
+                        },
+                        "link-id": "openflow:9:2/host:00:00:00:00:00:03",
+                        "source": {
+                            "source-node": "openflow:9",
+                            "source-tp": "openflow:9:2"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:4"
+                        },
+                        "link-id": "host:00:00:00:00:00:01/openflow:10:4",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:01",
+                            "source-tp": "host:00:00:00:00:00:01"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:4"
+                        },
+                        "link-id": "openflow:3:3",
+                        "source": {
+                            "source-node": "openflow:3",
+                            "source-tp": "openflow:3:3"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:4"
+                        },
+                        "link-id": "host:00:00:00:00:00:03/openflow:10:4",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:03",
+                            "source-tp": "host:00:00:00:00:00:03"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:11",
+                            "dest-tp": "openflow:11:2"
+                        },
+                        "link-id": "host:00:00:00:00:00:03/openflow:11:2",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:03",
+                            "source-tp": "host:00:00:00:00:00:03"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:10",
+                            "dest-tp": "openflow:10:4"
+                        },
+                        "link-id": "host:00:00:00:00:00:04/openflow:10:4",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:04",
+                            "source-tp": "host:00:00:00:00:00:04"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:9",
+                            "dest-tp": "openflow:9:3"
+                        },
+                        "link-id": "openflow:12:2",
+                        "source": {
+                            "source-node": "openflow:12",
+                            "source-tp": "openflow:12:2"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "host:00:00:00:00:00:03",
+                            "dest-tp": "host:00:00:00:00:00:03"
+                        },
+                        "link-id": "openflow:11:2/host:00:00:00:00:00:03",
+                        "source": {
+                            "source-node": "openflow:11",
+                            "source-tp": "openflow:11:2"
+                        }
+                    }
+                ],
+                "node": [
+                    {
+                        "node-id": "openflow:11",
+                        "opendaylight-topology-inventory:inventory-node-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:11']",
+                        "termination-point": [
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:11']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:11:1']",
+                                "tp-id": "openflow:11:1"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:11']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:11:2']",
+                                "tp-id": "openflow:11:2"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:11']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:11:LOCAL']",
+                                "tp-id": "openflow:11:LOCAL"
+                            }
+                        ]
+                    },
+                    {
+                        "node-id": "openflow:10",
+                        "opendaylight-topology-inventory:inventory-node-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:10']",
+                        "termination-point": [
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:10']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:10:1']",
+                                "tp-id": "openflow:10:1"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:10']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:10:2']",
+                                "tp-id": "openflow:10:2"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:10']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:10:LOCAL']",
+                                "tp-id": "openflow:10:LOCAL"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:10']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:10:3']",
+                                "tp-id": "openflow:10:3"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:10']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:10:4']",
+                                "tp-id": "openflow:10:4"
+                            }
+                        ]
+                    },
+                    {
+                        "host-tracker-service:addresses": [
+                            {
+                                "first-seen": 1510857750113,
+                                "id": 10,
+                                "ip": "10.0.2.101",
+                                "last-seen": 1510857750113,
+                                "mac": "00:00:00:00:00:02"
+                            }
+                        ],
+                        "host-tracker-service:attachment-points": [
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:02",
+                                "tp-id": "openflow:10:4"
+                            }
+                        ],
+                        "host-tracker-service:id": "00:00:00:00:00:02",
+                        "node-id": "host:00:00:00:00:00:02",
+                        "termination-point": [
+                            {
+                                "tp-id": "host:00:00:00:00:00:02"
+                            }
+                        ]
+                    },
+                    {
+                        "host-tracker-service:addresses": [
+                            {
+                                "first-seen": 1510857750071,
+                                "id": 8,
+                                "ip": "10.0.1.101",
+                                "last-seen": 1510857750071,
+                                "mac": "00:00:00:00:00:01"
+                            }
+                        ],
+                        "host-tracker-service:attachment-points": [
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:01",
+                                "tp-id": "openflow:10:4"
+                            }
+                        ],
+                        "host-tracker-service:id": "00:00:00:00:00:01",
+                        "node-id": "host:00:00:00:00:00:01",
+                        "termination-point": [
+                            {
+                                "tp-id": "host:00:00:00:00:00:01"
+                            }
+                        ]
+                    },
+                    {
+                        "host-tracker-service:addresses": [
+                            {
+                                "first-seen": 1510857750077,
+                                "id": 9,
+                                "ip": "10.0.5.101",
+                                "last-seen": 1510857750077,
+                                "mac": "00:00:00:00:00:04"
+                            }
+                        ],
+                        "host-tracker-service:attachment-points": [
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:04",
+                                "tp-id": "openflow:10:4"
+                            }
+                        ],
+                        "host-tracker-service:id": "00:00:00:00:00:04",
+                        "node-id": "host:00:00:00:00:00:04",
+                        "termination-point": [
+                            {
+                                "tp-id": "host:00:00:00:00:00:04"
+                            }
+                        ]
+                    },
+                    {
+                        "host-tracker-service:addresses": [
+                            {
+                                "first-seen": 1510857728924,
+                                "id": 1,
+                                "ip": "10.0.4.101",
+                                "last-seen": 1510857728924,
+                                "mac": "00:00:00:00:00:03"
+                            },
+                            {
+                                "first-seen": 1510857728661,
+                                "id": 0,
+                                "ip": "10.0.4.101",
+                                "last-seen": 1510857728661,
+                                "mac": "00:00:00:00:00:03"
+                            },
+                            {
+                                "first-seen": 1510857729908,
+                                "id": 4,
+                                "ip": "10.0.4.101",
+                                "last-seen": 1510857729908,
+                                "mac": "00:00:00:00:00:03"
+                            }
+                        ],
+                        "host-tracker-service:attachment-points": [
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:03",
+                                "tp-id": "openflow:10:4"
+                            },
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:03",
+                                "tp-id": "openflow:11:2"
+                            },
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:03",
+                                "tp-id": "openflow:9:2"
+                            }
+                        ],
+                        "host-tracker-service:id": "00:00:00:00:00:03",
+                        "node-id": "host:00:00:00:00:00:03",
+                        "termination-point": [
+                            {
+                                "tp-id": "host:00:00:00:00:00:03"
+                            }
+                        ]
+                    },
+                    {
+                        "node-id": "openflow:9",
+                        "opendaylight-topology-inventory:inventory-node-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:9']",
+                        "termination-point": [
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:9']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:9:3']",
+                                "tp-id": "openflow:9:3"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:9']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:9:LOCAL']",
+                                "tp-id": "openflow:9:LOCAL"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:9']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:9:4']",
+                                "tp-id": "openflow:9:4"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:9']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:9:1']",
+                                "tp-id": "openflow:9:1"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:9']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:9:2']",
+                                "tp-id": "openflow:9:2"
+                            }
+                        ]
+                    }
+                ],
                 "topology-id": "flow:1"
             }
         ]
