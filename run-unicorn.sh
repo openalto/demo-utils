@@ -12,6 +12,7 @@ sudo docker run -d \
 	-p $port2:6653 \
 	-p $http_port:80 \
 	-p $api_port:8181 \
+    --entrypoint docker-entry-point.sh \
 	-v $(pwd)/$config_folder/web.xml:/opt/unicorn-server/WEB-INF/web.xml \
 	-v $(pwd)/$config_folder/server.json:/opt/unicorn-server/WEB-INF/classes/server.json \
 	-v $(pwd)/$config_folder/mock.json:/opt/unicorn-server/WEB-INF/classes/adapter/mock.json \
