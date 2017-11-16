@@ -1,23 +1,16 @@
 {
-  "domain-name": "Domain-1",
-  "domain-ip": "127.0.0.1",
-  "http-port": 9000,
+  "domain-name": "siteB",
+  "domain-ip": "192.168.1.21",
+  "http-port": 9002,
   "control-url": "/experimental/v1/unicorn/updates",
   "deploy-url": "/experimental/v1/unicorn/deploys",
   "hosts": [
-    "10.0.1.100",
-    "10.0.1.101",
-    "10.0.1.102",
-    "10.0.1.103",
-    "10.0.1.104",
-    "10.0.1.105"
+    {
+      "host-ip": "10.0.2.101",
+      "management-ip": "10.0.2.151"
+    }
   ],
   "ingress-points": [
-    "10.0.1.200",
-    "10.0.1.201",
-    "10.0.1.202",
-    "10.0.1.203",
-    "10.0.1.204",
-    "10.0.1.205"
+    "10.0.2.201"
   ]
 }
