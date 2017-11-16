@@ -1,0 +1,42 @@
+{
+    "network-topology": {
+        "topology": [
+            {
+                "link": [
+                    {
+                        "destination": {
+                            "dest-node": "openflow:5",
+                            "dest-tp": "openflow:5:2"
+                        },
+                        "link-id": "openflow:10:3",
+                        "source": {
+                            "source-node": "openflow:10",
+                            "source-tp": "openflow:10:3"
+                        }
+                    }
+                ],
+                "node": [
+                    {
+                        "node-id": "openflow:5",
+                        "opendaylight-topology-inventory:inventory-node-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']",
+                        "termination-point": [
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:5:LOCAL']",
+                                "tp-id": "openflow:5:LOCAL"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:5:1']",
+                                "tp-id": "openflow:5:1"
+                            },
+                            {
+                                "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:5']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:5:2']",
+                                "tp-id": "openflow:5:2"
+                            }
+                        ]
+                    }
+                ],
+                "topology-id": "flow:1"
+            }
+        ]
+    }
+}
