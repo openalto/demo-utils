@@ -5,13 +5,24 @@
                 "link": [
                     {
                         "destination": {
-                            "dest-node": "openflow:7",
-                            "dest-tp": "openflow:7:2"
+                            "dest-node": "host:00:00:00:00:00:02",
+                            "dest-tp": "host:00:00:00:00:00:02"
                         },
-                        "link-id": "openflow:9:4",
+                        "link-id": "openflow:7:1/host:00:00:00:00:00:02",
                         "source": {
-                            "source-node": "openflow:9",
-                            "source-tp": "openflow:9:4"
+                            "source-node": "openflow:7",
+                            "source-tp": "openflow:7:1"
+                        }
+                    },
+                    {
+                        "destination": {
+                            "dest-node": "openflow:7",
+                            "dest-tp": "openflow:7:1"
+                        },
+                        "link-id": "host:00:00:00:00:00:02/openflow:7:1",
+                        "source": {
+                            "source-node": "host:00:00:00:00:00:02",
+                            "source-tp": "host:00:00:00:00:00:02"
                         }
                     }
                 ],
@@ -31,6 +42,31 @@
                             {
                                 "opendaylight-topology-inventory:inventory-node-connector-ref": "/opendaylight-inventory:nodes/opendaylight-inventory:node[opendaylight-inventory:id='openflow:7']/opendaylight-inventory:node-connector[opendaylight-inventory:id='openflow:7:LOCAL']",
                                 "tp-id": "openflow:7:LOCAL"
+                            }
+                        ]
+                    },
+                    {
+                        "host-tracker-service:addresses": [
+                            {
+                                "first-seen": 1510857089121,
+                                "id": 0,
+                                "ip": "10.0.2.101",
+                                "last-seen": 1510857089121,
+                                "mac": "00:00:00:00:00:02"
+                            }
+                        ],
+                        "host-tracker-service:attachment-points": [
+                            {
+                                "active": true,
+                                "corresponding-tp": "host:00:00:00:00:00:02",
+                                "tp-id": "openflow:7:1"
+                            }
+                        ],
+                        "host-tracker-service:id": "00:00:00:00:00:02",
+                        "node-id": "host:00:00:00:00:00:02",
+                        "termination-point": [
+                            {
+                                "tp-id": "host:00:00:00:00:00:02"
                             }
                         ]
                     }

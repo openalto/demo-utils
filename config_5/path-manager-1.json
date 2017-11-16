@@ -1,8 +1,8 @@
 {
         "path":
             {
-                "id": 2, "priority": 2,
+                "id": 1, "priority": 1,
                 "flow-desc": {"src-ip": "10.0.1.101/32", "dst-ip": "10.0.5.101/32"},
-                "links":[{"link": "host:00:00:00:00:00:01/openflow:12:1"}]
+                "links":[{"link": "openflow:5:1/host:00:00:00:00:00:04"}]
             }
 }
