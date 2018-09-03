@@ -1,0 +1,66 @@
+{
+  "domains": {
+    "net0": {
+      "controller": {
+        "name": "c0",
+        "ip": "192.168.1.51",
+        "port": 6633
+      },
+      "switches": {
+        "sw1": {
+          "class": "OVSSwitch"
+        },
+        "sw2": {
+          "class": "OVSSwitch"
+        },
+        "sw3": {
+          "class": "OVSSwitch"
+        },
+        "sw4": {
+          "class": "OVSSwitch"
+        },
+        "sw5": {
+          "class": "OVSSwitch"
+        },
+        "sw6": {
+          "class": "OVSSwitch"
+        },
+        "sw7": {
+          "class": "OVSSwitch"
+        },
+        "sw8": {
+          "class": "OVSSwitch"
+        }
+      },
+      "hosts": {
+        "s1": {
+          "ip": "10.0.1.101"
+        },
+        "s2": {
+          "ip": "10.0.1.102"
+        },
+        "d1": {
+          "ip": "10.0.1.201"
+        },
+        "d2": {
+          "ip": "10.0.1.202"
+        }
+      },
+      "links": [
+        ["s1", "sw1", {"bw": 100}],
+        ["s2", "sw2", {"bw": 100}],
+        ["sw1", "sw5", {"bw": 100}],
+        ["sw2", "sw5", {"bw": 100}],
+        ["sw5", "sw6", {"bw": 100}],
+        ["sw5", "sw7", {"bw": 100}],
+        ["sw6", "sw8", {"bw": 100}],
+        ["sw7", "sw8", {"bw": 100}],
+        ["sw8", "sw3", {"bw": 100}],
+        ["sw8", "sw4", {"bw": 100}],
+        ["sw3", "d1", {"bw": 100}],
+        ["sw4", "d2", {"bw": 100}]
+      ]
+    }
+  },
+  "interconnections": []
+}
