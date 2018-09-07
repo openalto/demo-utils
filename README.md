@@ -107,6 +107,85 @@ information from US Army Division 2 and UK Army. Then US Army Division queries
 the bandwidth sharing information of US Army Division 2 and UK Army based on
 the collected inter-partner route information.
 
+### Case 1: Single Domain, Fixed Route
+
+``` bash
+# TODO: Show the cmd to setup the orchestrator and the unicorn server
+
+```
+
+The route is fixed for the given flow.
+
+When demonstrate this case, the network operator should installed the route for
+the give flow before any reqeust.
+
+``` bash
+# TODO: Show the cmd to install the host-to-host intent proactively
+
+```
+
+Then the user submits a task (involving a set of flows) to our demo
+orchestrator.
+
+``` bash
+# TODO: Show the cmd to send a task
+
+```
+
+The orchestrator then will query the single-domain resource discovery by
+sending a HTTP request.
+
+``` bash
+# TODO: Show the immediate request/response between the orchestrator
+#       and the unicorn server
+
+```
+
+Once receiving the resource constraints, the orchestrator will compute an
+optimal resource reservation and perform it.
+
+``` bash
+# TODO: show the optimal problem the orchestrator will compute 
+
+# TODO: show the immediate cmd the orchestrator will invoke to
+#       perform the resource reservation
+
+# TODO: show the immediate cmd the orchestrator will invoke to
+#       start the data transfer
+
+```
+
+### Case 2: Single Domain, On-Demand Route
+
+Config the unicorn server as the on-demand mode.
+
+``` xml
+<!-- TODO: The following config will enable the on-demand mode -->
+
+```
+
+After that, the route will be setup reactively when a user want to discovery
+resources for a flow.
+
+And users can add their specific requirements for the given set of flows.
+
+We give an example of the data transfer task with the waypoint requirement.
+
+``` http
+# TODO: Show the cmd to submit a task with the specific requirement
+
+```
+
+The following steps similar to Case 1.
+
+### Case 3: Multi-Domain, Fixed Inter-Domain Routing
+
+TBD.
+
+### Case 4: Multi-Domain, On-Demand Inter-Domain Routing
+
+TBD.
+
 ## Install Dependencies
 
 ``` bash
