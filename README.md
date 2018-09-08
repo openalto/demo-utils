@@ -43,13 +43,13 @@ s2 -> d2
 Application request:
 
 ``` http
-POST /resource-query
+POST <base-uri>/resource-query
 Host: unicorn.example.com
 Accept: application/json
 Content-Type: application/json
 
 {
-  query-desc: [
+  "query-desc": [
     {
       "flow": {
         "flow-id": 0,
@@ -157,26 +157,56 @@ optimal resource reservation and perform it.
 
 ### Case 2: Single Domain, On-Demand Route
 
-Config the unicorn server as the on-demand mode.
+Modify the `web.xml` file to config the unicorn server with the on-demand route
+support. You can check your topology view in the controller to find the node
+id.
 
 ``` xml
-<!-- TODO: The following config will enable the on-demand mode -->
+  ...
 
+  <!-- The following config may be used by the on-demand route -->
+  <context-param>
+    <description>The node id of the switch attached to the DPI</description>
+    <param-name>adapter.dpi</param-name>
+    <param-value>openflow:6</param-value> <!-- Assume sw6 attached to the DPI node -->
+  </context-param>
+
+  ...
 ```
 
-After that, the route will be setup reactively when a user want to discovery
-resources for a flow.
+After that, the client can send a request for the on-demand path compute and
+setup. The unicorn domain agent will compute available path satisfying the
+demand submitted by the client.
 
-And users can add their specific requirements for the given set of flows.
+Currently, the demand includes `min-bw` (guarantee the available bandwidth >= a
+given value) and `pass-to-dpi` (a boolean value to specify whether the path
+needs to pass a DPI attached node).
 
 We give an example of the data transfer task with the waypoint requirement.
 
 ``` http
-# TODO: Show the cmd to submit a task with the specific requirement
+POST <base-uri>/on-demand-deploy HTTP/1.1
+Host: alto.example.com
+Content-Type: application/json
 
+[
+    {
+        "src": "10.0.1.101",
+        "dst": "10.0.1.201",
+        "min-bw": 20000,
+        "pass-to-dpi": true
+    },
+    {
+        "src": "10.0.1.102",
+        "dst": "10.0.1.202",
+        "min-bw": 20000,
+        "pass-to-dpi": true
+    }
+]
 ```
 
-The following steps similar to Case 1.
+The following steps similar to Case 1. You can send the same `/resource-query`
+request to the domain agent.
 
 ### Case 3: Multi-Domain, Fixed Inter-Domain Routing
 
