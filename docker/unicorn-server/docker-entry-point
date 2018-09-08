@@ -1,16 +1,30 @@
 #!/bin/bash
 
+prog() {
+    local w=80 p=$1;  shift
+    local spin=$1;  shift
+    # create a string of spaces, then change them to spins
+    printf -v spins "%*s" "$(( $p*$w/100 ))" ""; spins=${spins// /$spin};
+    # print those spins on a fixed-width space plus the percentage etc.
+    printf "\r\e[K|%-*s| %3d %% %s" "$w" "$spins" "$p" "$*";
+}
+
+echo 'Configuring features repositories and boot...'
+sed -i 's_^\(featuresRepositories *=.*\)$_\1,mvn:org.opendaylight.alto.ext/alto-bwmonitor-features/0.1.0.Boron-SR4-SNAPSHOT/xml/features,mvn:org.opendaylight.alto.ext/alto-pathmanager-features/0.1.0.Boron-SR4-SNAPSHOT/xml/features,mvn:org.opendaylight.alto.ext/alto-unicorn-features/0.1.0.Boron-SR4-SNAPSHOT/xml/features_' /opt/opendaylight/etc/org.apache.karaf.features.cfg
+sed -i 's_^\(featuresBoot *=.*\)$_\1,odl-l2switch-switch,odl-alto-unicorn-rest_' /opt/opendaylight/etc/org.apache.karaf.features.cfg
+
 # Start opendaylight
 /opt/opendaylight/bin/start
 
-# TODO: install alto-unicorn
+echo 'Waiting for the controller ready'
 
-# Update web.xml for unicorn-server
-# unzip /opt/unicorn-server.war WEB-INF/web.xml -d /tmp/
-# sed -i 's_<param-value>mock</param-value>_<param-value>odl</param-value>_' /tmp/WEB-INF/web.xml
-# zip -b /tmp -u /opt/unicorn-server.war WEB-INF/web.xml
+tt=60
+step=$(echo "scale=2; $tt/100" | bc)
 
-# TODO: Update unicorn domain registration config
+for x in {1..100} ; do
+    prog "$x" "=" starting the controller...
+    sleep $step
+done ; echo
 
 # Start unicorn-server
 java -jar /opt/jetty-runner.jar --port 80 --log /var/log/jetty.log /opt/unicorn-server
