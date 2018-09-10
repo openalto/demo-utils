@@ -3,7 +3,7 @@
     "siteA": {
       "controller": {
         "name": "c0",
-        "ip": "192.168.1.50",
+        "ip": "127.0.0.1",
         "port": 6634
       },
       "switches": {
