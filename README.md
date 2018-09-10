@@ -40,36 +40,18 @@ s1 -> d1
 s2 -> d2
 ```
 
-Application request:
+The major benefit of SFP is for the multi-domain scenario. We will demonstrate
+the key features by using the following basic multi-domain topology:
 
-``` http
-POST <base-uri>/resource-query
-Host: unicorn.example.com
-Accept: application/json
-Content-Type: application/json
-
-{
-  "query-desc": [
-    {
-      "flow": {
-        "flow-id": 0,
-        "src-ip": "10.0.1.101",
-        "dst-ip": "10.0.1.201",
-        "protocol": "tcp"
-      },
-      "ingress-point": ""
-    },
-    {
-      "flow": {
-        "flow-id": 1,
-        "src-ip": "10.0.1.102",
-        "dst-ip": "10.0.1.202",
-        "protocol": "tcp"
-      },
-      "ingress-point": ""
-    }
-  ]
-}
+```
++------------------------+   +-------------+   +----------------+
+| s1 --- sw1             |   |     sw2     |   |     sw2 --- d1 |
+|           \            |   |    /   \    |   |    /  |        |
+|            sw3 --- sw4 ===== sw1     sw4 ===== sw1   |        |
+|           /            |   |    \   /    |   |    \  |        |
+| s2 --- sw2             |   |     sw3     |   |     sw3 --- d2 |
++------------------------+   +-------------+   +----------------+
+         Site A                  Site B              Site C
 ```
 
 ## Demo Plan
@@ -92,7 +74,7 @@ transfer both datasets.
 infrastructure for both dataset transfers are not fixed, i.e., on-demand
 routing; and (2) US Army wants each dataset to pass a deep packet inspector
 (DPI) middlebox before arriving at the destinations while guaranteeing >20Mbps
-bandwidth for the transfer from server 1 to server 2. 
+bandwidth for the transfer from server 1 to server 2.
 
 **Case 3**. Extension of Case 1 with: (1) there are three coalition partners, i.e.,
 US Army Division 1, US Army Division 2, and UK Army, and (2) US Army Division 1
@@ -134,6 +116,38 @@ orchestrator.
 
 The orchestrator then will query the single-domain resource discovery by
 sending a HTTP request.
+
+Application request:
+
+``` http
+POST <base-uri>/resource-query
+Host: unicorn.example.com
+Accept: application/json
+Content-Type: application/json
+
+{
+  "query-desc": [
+    {
+      "flow": {
+        "flow-id": 0,
+        "src-ip": "10.0.1.101",
+        "dst-ip": "10.0.1.201",
+        "protocol": "tcp"
+      },
+      "ingress-point": ""
+    },
+    {
+      "flow": {
+        "flow-id": 1,
+        "src-ip": "10.0.1.102",
+        "dst-ip": "10.0.1.202",
+        "protocol": "tcp"
+      },
+      "ingress-point": ""
+    }
+  ]
+}
+```
 
 ``` bash
 # TODO: Show the immediate request/response between the orchestrator
