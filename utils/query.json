@@ -1,0 +1,20 @@
+{
+    "query-desc": [
+        {
+            "flow": {
+                "flow-id": 0,
+                "src-ip": "10.0.1.101",
+                "dst-ip": "10.0.1.201",
+                "protocol": "tcp"
+            }
+        },
+        {
+            "flow": {
+                "flow-id": 1,
+                "src-ip": "10.0.1.102",
+                "dst-ip": "10.0.1.202",
+                "protocol": "tcp"
+            }
+        }
+    ]
+}

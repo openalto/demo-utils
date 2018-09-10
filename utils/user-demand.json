@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "jobs": [
+      {
+        "potential_srcs": [
+          {
+            "ip": "10.0.1.101",
+            "port": 1234
+          }
+        ],
+        "potential_dsts": [
+          {
+            "ip": "10.0.1.201",
+            "port": 2345
+          }
+        ],
+        "demand": {
+          "min-bw": 20000,
+          "pass-to-dpi": true
+        }
+      },
+      {
+        "potential_srcs": [
+          {
+            "ip": "10.0.1.102",
+            "port": 3456
+          }
+        ],
+        "potential_dsts": [
+          {
+            "ip": "10.0.1.202",
+            "port": 5678
+          }
+        ],
+        "demand": {
+          "min-bw": 20000,
+          "pass-to-dpi": true
+        }
+      }
+    ]
+  }
+]
