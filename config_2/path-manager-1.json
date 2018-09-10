@@ -1,8 +1,0 @@
-{
-        "path":
-            {
-                "id": 1, "priority": 1,
-                "flow-desc": {"src-ip": "10.0.2.101/32", "dst-ip": "10.0.4.101/32"},
-                "links":[{"link": "host:00:00:00:00:00:02/openflow:7:1"}]
-            }
-}

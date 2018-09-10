@@ -8,6 +8,7 @@ http_port=$((9000 + $1))
 api_port=$((8181 + $1))
 sudo docker run -d \
 	--name $name \
+	--rm \
 	-p $port1:6633 \
 	-p $port2:6653 \
 	-p $http_port:80 \
@@ -18,4 +19,5 @@ sudo docker run -d \
 	-v $(pwd)/$config_folder/server.json:/opt/unicorn-server/WEB-INF/classes/server.json \
 	-v $(pwd)/$config_folder/mock.json:/opt/unicorn-server/WEB-INF/classes/adapter/mock.json \
 	-v $(pwd)/$config_folder/orchestrators.json:/opt/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json \
-	fno2010/unicorn-server:odl-boron-sr4
+	-v $(pwd)/../alto-domain-agent/target/unicorn-server:/opt/unicorn-server \
+	unicorn-server:latest

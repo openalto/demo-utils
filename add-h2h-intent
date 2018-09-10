@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CONTROLLER=${3:-localhost}
+PORT=${4:-8182}
+
+#if [[ "$#" -ne 2 ]] ; then
+#    echo "Usage: $0 <src-ip> <dst-ip> [controller-ip]"
+#    exit -1
+#fi
+
+curl -v -u admin:admin http://$CONTROLLER:$PORT/restconf/operations/alto-spce:setup-route -d '{"input":{"endpoints":{"src":"'$1'","dst":"'$2'"},"flow-layer":"L3","objective-metrics":["hopcount"]}}' -H 'Content-type:application/json'
