@@ -1,7 +1,7 @@
 {
   "domain-name": "siteA",
-  "domain-ip": "192.168.1.50",
-  "http-port": 9003,
+  "domain-ip": "172.31.12.73",
+  "http-port": 9000,
   "control-url": "/experimental/v1/unicorn/updates",
   "deploy-url": "/experimental/v1/unicorn/deploys",
   "hosts": [
