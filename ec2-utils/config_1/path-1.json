@@ -1,0 +1,16 @@
+{
+    "src-ip": "10.0.1.101",
+    "dst-ip": "10.0.2.201",
+    "path": [
+        "host:00:00:00:00:00:01",
+        "openflow:1:1",
+        "openflow:1",
+        "openflow:1:2",
+        "openflow:3",
+        "openflow:3:3",
+        "openflow:4",
+        "openflow:4:2",
+        "openflow:7"
+    ]
+}
+
