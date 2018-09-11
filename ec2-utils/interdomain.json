@@ -1,0 +1,81 @@
+{
+    "domains": {
+        "siteA": {
+            "controller": {
+                "name": "c0",
+                "ip": "172.31.5.84",
+                "port": 6633
+            },
+            "switches": {
+                "sw1": { "class": "OVSSwitch" },
+                "sw2": { "class": "OVSSwitch" },
+                "sw3": { "class": "OVSSwitch" },
+                "sw4": { "class": "OVSSwitch" }
+            },
+            "hosts": {
+                "s1": { "ip": "10.0.1.101", "mac": "00:00:00:00:00:01" },
+                "s2": { "ip": "10.0.1.102", "mac": "00:00:00:00:00:02" }
+            },
+            "links": [
+                ["s1", "sw1", {"bw": 100}],
+                ["s2", "sw2", {"bw": 100}],
+                ["sw1", "sw3", {"bw": 100}],
+                ["sw2", "sw3", {"bw": 100}],
+                ["sw3", "sw4", {"bw": 100}]
+            ]
+        },
+        "siteB": {
+            "controller": {
+                "name": "c1",
+                "ip": "172.31.5.236",
+                "port": 6633
+            },
+            "switches": {
+                "sw1": { "class": "OVSSwitch" },
+                "sw2": { "class": "OVSSwitch" },
+                "sw3": { "class": "OVSSwitch" },
+                "sw4": { "class": "OVSSwitch" }
+            },
+            "hosts": { },
+            "links": [
+                ["sw1", "sw2", {"bw": 40}],
+                ["sw1", "sw3", {"bw": 40}],
+                ["sw2", "sw4", {"bw": 40}],
+                ["sw3", "sw4", {"bw": 40}]
+            ]
+        },
+        "siteC": {
+            "controller": {
+                "name": "c2",
+                "ip": "172.31.12.73",
+                "port": 6633
+            },
+            "switches": {
+                "sw1": { "class": "OVSSwitch" },
+                "sw2": { "class": "OVSSwitch" },
+                "sw3": { "class": "OVSSwitch" }
+            },
+            "hosts": {
+                "d1": { "ip": "10.0.2.201", "mac": "00:00:00:00:00:03" },
+                "d2": { "ip": "10.0.2.202", "mac": "00:00:00:00:00:04" }
+            },
+            "links": [
+                ["sw1", "sw2", {"bw": 100}],
+                ["sw1", "sw3", {"bw": 100}],
+                ["sw2", "sw3", {"bw": 100}],
+                ["sw2", "d1", {"bw": 100}],
+                ["sw3", "d2", {"bw": 100}]
+            ]
+        }
+    },
+    "interconnections": [
+        {
+            "node1": "siteA_sw4",
+            "node2": "siteB_sw1"
+        },
+        {
+            "node1": "siteB_sw4",
+            "node2": "siteC_sw1"
+        }
+    ]
+}

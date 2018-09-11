@@ -6,7 +6,7 @@ port1=6633
 port2=6653
 http_port=9000
 api_port=8181
-sudo docker run -d \
+docker run -d \
 	--name $name \
 	--rm \
 	-p $port1:6633 \
