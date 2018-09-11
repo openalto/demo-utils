@@ -23,7 +23,15 @@ virtualenv-prepare: virtualenv-install
 	source /usr/local/bin/virtualenvwrapper.sh && \
 	mkvirtualenv unicorn
 
-prepare: docker-prepare virtualenv-prepare
+misc-install:
+	sudo apt install pv bc jq
+
+misc-prepare: misc-install
+	sudo -u root mkdir -p /root/.ssh
+	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub || ssh-keygen"
+	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys"
+
+prepare: docker-prepare virtualenv-prepare misc-prepare
 
 start-case2-step1:
 	utils/start-step1.sh
@@ -33,4 +41,31 @@ start-case2-step2:
 
 stop-case2:
 	utils/stop-all.sh
+
+ec2-case1-start:
+	ec2-utils/start-step1.sh case1
+
+ec2-case1-config:
+	ec2-utils/start-step2.sh case1
+
+ec2-case2-start:
+	ec2-utils/start-step1.sh case2
+
+ec2-case2-config:
+	ec2-utils/start-step2.sh case2
+
+ec2-case3-start:
+	ec2-utils/start-step1.sh case3
+
+ec2-case3-config:
+	ec2-utils/start-step2.sh case3
+
+ec2-case4-start:
+	ec2-utils/start-step1.sh case4
+
+ec2-case4-config:
+	ec2-utils/start-step2.sh case4
+
+ec2-stop:
+	ec2-utils/stop-all.sh
 

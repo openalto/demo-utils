@@ -1,0 +1,70 @@
+{
+  "domains": {
+    "siteA": {
+      "controller": {
+        "name": "c0",
+        "ip": "172.31.5.84",
+        "port": 6633
+      },
+      "switches": {
+        "sw1": {
+          "class": "OVSSwitch"
+        },
+        "sw2": {
+          "class": "OVSSwitch"
+        },
+        "sw3": {
+          "class": "OVSSwitch"
+        },
+        "sw4": {
+          "class": "OVSSwitch"
+        },
+        "sw5": {
+          "class": "OVSSwitch"
+        },
+        "sw6": {
+          "class": "OVSSwitch"
+        },
+        "sw7": {
+          "class": "OVSSwitch"
+        },
+        "sw8": {
+          "class": "OVSSwitch"
+        }
+      },
+      "hosts": {
+        "s1": {
+          "ip": "10.0.1.101",
+	  "mac": "00:00:00:00:00:01"
+        },
+        "s2": {
+          "ip": "10.0.1.102",
+	  "mac": "00:00:00:00:00:02"
+        },
+        "d1": {
+          "ip": "10.0.1.201",
+	  "mac": "00:00:00:00:00:03"
+        },
+        "d2": {
+          "ip": "10.0.1.202",
+	  "mac": "00:00:00:00:00:04"
+        }
+      },
+      "links": [
+        ["s1", "sw1", {"bw": 110}],
+        ["s2", "sw2", {"bw": 110}],
+        ["sw1", "sw5", {"bw": 110}],
+        ["sw2", "sw5", {"bw": 110}],
+        ["sw5", "sw6", {"bw": 110}],
+        ["sw5", "sw7", {"bw": 110}],
+        ["sw6", "sw8", {"bw": 110}],
+        ["sw7", "sw8", {"bw": 110}],
+        ["sw8", "sw3", {"bw": 110}],
+        ["sw8", "sw4", {"bw": 110}],
+        ["sw3", "d1", {"bw": 110}],
+        ["sw4", "d2", {"bw": 110}]
+      ]
+    }
+  },
+  "interconnections": []
+}

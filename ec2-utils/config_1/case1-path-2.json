@@ -1,0 +1,25 @@
+{
+    "path_id": 2,
+    "src": "10.0.1.102",
+    "dst": "10.0.1.202",
+    "path": [
+        "host:00:00:00:00:00:02",
+        "openflow:2:1",
+        "openflow:2",
+        "openflow:2:2",
+        "openflow:5:2",
+        "openflow:5",
+        "openflow:5:3",
+        "openflow:6:1",
+        "openflow:6",
+        "openflow:6:2",
+        "openflow:8:1",
+        "openflow:8",
+        "openflow:8:4",
+        "openflow:4:2",
+        "openflow:4",
+        "openflow:4:1",
+        "host:00:00:00:00:00:04"
+    ]
+}
+

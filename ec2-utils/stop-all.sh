@@ -1,4 +1,8 @@
+#!/bin/bash
+
 sudo pkill gunicorn
-sudo docker stop unicorn1 &
-sudo docker stop unicorn2 &
-sudo docker stop unicorn3 &
+sudo pkill xdom-mn
+ssh -t -o StrictHostKeyChecking=no ubuntu@unicorn1 bash ~/stop-node.sh
+ssh -t -o StrictHostKeyChecking=no ubuntu@unicorn2 bash ~/stop-node.sh
+ssh -t -o StrictHostKeyChecking=no ubuntu@unicorn3 bash ~/stop-node.sh
+sudo mn -c
