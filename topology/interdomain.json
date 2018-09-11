@@ -26,9 +26,9 @@
         },
         "siteB": {
             "controller": {
-                "name": "c0",
+                "name": "c1",
                 "ip": "192.168.1.50",
-                "port": 6634
+                "port": 6635
             },
             "switches": {
                 "sw1": { "class": "OVSSwitch" },
@@ -46,9 +46,9 @@
         },
         "siteC": {
             "controller": {
-                "name": "c0",
+                "name": "c2",
                 "ip": "192.168.1.50",
-                "port": 6634
+                "port": 6636
             },
             "switches": {
                 "sw1": { "class": "OVSSwitch" },
