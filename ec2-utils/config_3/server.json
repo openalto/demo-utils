@@ -1,0 +1,19 @@
+{
+  "domain-name": "siteA",
+  "domain-ip": "172.31.12.73",
+  "http-port": 9000,
+  "control-url": "/experimental/v1/unicorn/updates",
+  "deploy-url": "/experimental/v1/unicorn/deploys",
+  "hosts": [
+    {
+      "host-ip": "10.0.2.201",
+      "management-ip": "10.0.2.251"
+    },
+    {
+      "host-ip": "10.0.2.202",
+      "management-ip": "10.0.2.252"
+    }
+  ],
+  "ingress-points": [
+  ]
+}
