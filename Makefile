@@ -6,7 +6,7 @@ docker-install:
 	sudo apt-key fingerprint 0EBFCD88
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu ${shell lsb_release -cs} stable"
 	sudo apt update
-	sudo apt install docker-ce
+	sudo apt install -y docker-ce
 	sudo usermod -a -G docker ${shell whoami}
 
 docker-prepare: docker-install
@@ -24,14 +24,14 @@ virtualenv-prepare: virtualenv-install
 	mkvirtualenv unicorn
 
 misc-install:
-	sudo apt install pv bc jq
+	sudo apt install -y pv bc jq python-pip
 
 misc-prepare: misc-install
 	sudo -u root mkdir -p /root/.ssh
 	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub || ssh-keygen"
 	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys"
 
-prepare: docker-prepare virtualenv-prepare misc-prepare
+prepare: misc-prepare docker-prepare virtualenv-prepare
 
 start-case2-step1:
 	utils/start-step1.sh
