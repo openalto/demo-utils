@@ -14,6 +14,7 @@ docker-prepare: docker-install
 
 virtualenv-install:
 	sudo pip install virtualenvwrapper
+	sudo pip3 install virtualenvwrapper
 
 virtualenv-prepare: virtualenv-install
 	echo 'export WORKON_HOME=$$HOME/.envs' >> ~/.bashrc
@@ -21,15 +22,24 @@ virtualenv-prepare: virtualenv-install
 	export WORKON_HOME=${HOME}/.envs && \
 	mkdir -p ${HOME}/.envs && \
 	source /usr/local/bin/virtualenvwrapper.sh && \
-	mkvirtualenv -p python3 unicorn
+	mkvirtualenv -p python2 unicorn
 
 misc-install:
-	sudo apt install -y pv bc jq python-pip python3
+	sudo apt update
+	sudo apt install -y pv bc jq python-pip
 
-misc-prepare: misc-install
+mn-install:
+	git clone https://github.com/mininet/mininet ~/mininet && \
+	pushd ~/mininet && ./util/install.sh && popd; \
+	git clone https://github.com/openalto/xdom-mn ~/xdom-mn && \
+	pushd ~/xdom-mn && sudo python setup.py install && popd; \
+
+misc-prepare: misc-install mn-install
 	sudo -u root mkdir -p /root/.ssh
 	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub || ssh-keygen"
 	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys"
+	git clone https://github.com/openalto/alto-orchestrator ~/alto-orchestrator --branch afm2018-case3
+	git clone https://github.com/openalto/UnicornUI ~/UnicornUI
 
 prepare: misc-prepare docker-prepare virtualenv-prepare
 

@@ -31,10 +31,10 @@ esac
 
 sudo echo "Some commands need root permission"
 
-export WORKON_HOME=$HOME/Envs
+export WORKON_HOME=$HOME/.envs
 source /usr/local/bin/virtualenvwrapper.sh
 
-WORKING_DIRECTORY=${WORKING_DIRECTORY:-$HOME/jace}
+WORKING_DIRECTORY=${WORKING_DIRECTORY:-$HOME}
 pushd $WORKING_DIRECTORY
 
 ORCHESTRATOR_DIRECTORY=$WORKING_DIRECTORY/alto-orchestrator/orchestrator
@@ -44,6 +44,7 @@ UNICORN_UI_DIRECTORY=$WORKING_DIRECTORY/UnicornUI
 # Start orchestrator
 pushd $ORCHESTRATOR_DIRECTORY
 workon unicorn
+pip install -r ../requirements.txt
 gunicorn -b 0.0.0.0:6666 app:app &
 deactivate
 popd
@@ -59,6 +60,7 @@ for x in {1..100} ; do
 done ; echo
 
 # Start mininet
+cd xdom-mn && sudo python setup.py install && cd ..
 sudo ./xdom-mn/bin/xdom-mn -c $TOPO --zmq-ip="0.0.0.0"
 sleep 5
 
