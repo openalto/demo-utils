@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 
 docker-install:
-	sudo apt install apt-transport-https ca-certificates curl software-properties-common
+	sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	sudo apt-key fingerprint 0EBFCD88
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu ${shell lsb_release -cs} stable"
@@ -21,10 +21,10 @@ virtualenv-prepare: virtualenv-install
 	export WORKON_HOME=${HOME}/.envs && \
 	mkdir -p ${HOME}/.envs && \
 	source /usr/local/bin/virtualenvwrapper.sh && \
-	mkvirtualenv unicorn
+	mkvirtualenv -p python3 unicorn
 
 misc-install:
-	sudo apt install -y pv bc jq python-pip
+	sudo apt install -y pv bc jq python-pip python3
 
 misc-prepare: misc-install
 	sudo -u root mkdir -p /root/.ssh
