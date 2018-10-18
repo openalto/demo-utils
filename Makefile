@@ -34,16 +34,31 @@ mn-install:
 	pushd ~/xdom-mn && sudo python setup.py install && popd; \
 
 misc-prepare: misc-install mn-install
-	#sudo -u root mkdir -p /root/.ssh
-	#sudo -u root bash -c "cat /root/.ssh/id_rsa.pub || ssh-keygen"
-	#sudo -u root bash -c "cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys"
+	# SSH keys
+	sudo -u root mkdir -p /root/.ssh
+	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub || ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa"
+	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys"
 	mkdir -p ~/.ssh
-	cat ~/.ssh/id_rsa.pub || ssh-keygen
+	cat ~/.ssh/id_rsa.pub || ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+	# Git repos
 	git clone https://github.com/openalto/alto-orchestrator ~/alto-orchestrator --branch afm2018-case3
 	git clone https://github.com/openalto/UnicornUI ~/UnicornUI
 
-prepare: misc-prepare docker-prepare virtualenv-prepare
+apply-patch:
+	sudo pip install python-odl
+	cp ec2-utils/pyunicorn ~
+	sudo cp patch/instance.py /usr/local/lib/python2.7/dist-packages/odl/
+	sudo mkdir -p /var/lib/data/python-odl/templates/
+	sudo cp patch/templates/l3output.tpl /var/lib/data/python-odl/templates/
+
+nginx-install:
+	sudo apt install -y nginx
+	sudo cp nginx-default /etc/nginx/sites-enabled/default
+	sudo systemctl restart nginx.service
+
+prepare: misc-prepare docker-prepare virtualenv-prepare apply-patch
 
 start-case2-step1:
 	utils/start-step1.sh
