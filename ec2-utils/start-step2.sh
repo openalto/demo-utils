@@ -2,10 +2,10 @@
 
 CASE=${1:-case3}
 
-export WORKON_HOME=$HOME/Envs
+export WORKON_HOME=$HOME/.envs
 source /usr/local/bin/virtualenvwrapper.sh
 
-WORKING_DIRECTORY=${WORKING_DIRECTORY:-$HOME/jace}
+WORKING_DIRECTORY=${WORKING_DIRECTORY:-$HOME}
 pushd $WORKING_DIRECTORY
 
 ORCHESTRATOR_DIRECTORY=$WORKING_DIRECTORY/alto-orchestrator/orchestrator
@@ -26,6 +26,7 @@ popd
 # Start Unicorn UI
 pushd $UNICORN_UI_DIRECTORY
 workon unicorn
+pip install -r requirements.txt
 python setup.py install
 gunicorn -b 0.0.0.0:4567 unicorn:app &
 deactivate

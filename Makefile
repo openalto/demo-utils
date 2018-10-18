@@ -14,7 +14,6 @@ docker-prepare: docker-install
 
 virtualenv-install:
 	sudo pip install virtualenvwrapper
-	sudo pip3 install virtualenvwrapper
 
 virtualenv-prepare: virtualenv-install
 	echo 'export WORKON_HOME=$$HOME/.envs' >> ~/.bashrc
@@ -35,9 +34,12 @@ mn-install:
 	pushd ~/xdom-mn && sudo python setup.py install && popd; \
 
 misc-prepare: misc-install mn-install
-	sudo -u root mkdir -p /root/.ssh
-	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub || ssh-keygen"
-	sudo -u root bash -c "cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys"
+	#sudo -u root mkdir -p /root/.ssh
+	#sudo -u root bash -c "cat /root/.ssh/id_rsa.pub || ssh-keygen"
+	#sudo -u root bash -c "cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys"
+	mkdir -p ~/.ssh
+	cat ~/.ssh/id_rsa.pub || ssh-keygen
+	cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 	git clone https://github.com/openalto/alto-orchestrator ~/alto-orchestrator --branch afm2018-case3
 	git clone https://github.com/openalto/UnicornUI ~/UnicornUI
 
