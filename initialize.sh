@@ -82,3 +82,12 @@ echo "Installing UnicornUI"
 cd $WORK_HOME
 git clone --depth=1 https://github.com/openalto/UnicornUI
 $UNICORN_PYTHON_INTERPRETER -m pip install -q -r UnicornUI/requirements.txt
+
+echo "Installing cross domain mininet"
+cd $WORK_HOME
+git clone --depth=1 https://github.com/openalto/xdom-mn
+cd xdom-mn
+sudo pip install -r requirements.txt # Using system python2
+sudo ./setup.py install
+echo "export XDOMMN_HOME=$WORK_HOME/xdom-mn" >> ~/.bashrc
+XDOMMN_HOME=$WORK_HOME/xdom-mn
