@@ -44,8 +44,8 @@ virtualenv virtualenvwrapper maven openjdk-8-jdk unzip
 git clone  --depth=1 --single-branch https://github.com/mininet/mininet && cd mininet && ./util/install.sh
 
 echo "Creating a virtualenv named unicorn"
-cd $WORK_HOME
 mkdir -p $WORK_HOME/Env
+cd $WORK_HOME/Env
 virtualenv -p `which python3` unicorn
 UNICORN_PYTHON_INTERPRETER=$WORK_HOME/Env/unicorn/bin/python
 echo "export UNICORN_PYTHON_INTERPRETER=$WORK_HOME/Env/unicorn/bin/python" >> ~/.bashrc
@@ -57,7 +57,7 @@ cd $WORK_HOME
 curl https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.0/opendaylight-0.9.0.zip -o opendaylight-0.9.0.zip
 unzip opendaylight-0.9.0.zip && mv opendaylight-0.9.0 opendaylight
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/.bashrc
-echo "export ODL_HOME=$WORK_HOME/opendaylight"
+echo "export ODL_HOME=$WORK_HOME/opendaylight" >> ~/.bashrc
 source ~/.bashrc
 
 echo "Installing openflow plugin"
