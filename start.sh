@@ -58,7 +58,8 @@ curl https://nexus.opendaylight.org/content/repositories/public/org/opendaylight
 unzip opendaylight-0.9.0.zip && mv opendaylight-0.9.0 opendaylight
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/.bashrc
 echo "export ODL_HOME=$WORK_HOME/opendaylight" >> ~/.bashrc
-source ~/.bashrc
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+ODL_HOME=$WORK_HOME/opendaylight
 
 echo "Installing openflow plugin"
 $ODL_HOME/bin/start
