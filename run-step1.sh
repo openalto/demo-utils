@@ -16,6 +16,21 @@ progress-bar() {
 
 WORK_HOME=$HOME
 
+# This script shouldn't be called by root
+username=`whoami`
+if [ "$username" == "root" ]; then
+    echo "This script shouldn't be called by root"
+    exit -1 
+fi
+
+# The script may need root permission for some commands
+echo "This script may need root permission for some commands"
+root_result=`sudo echo "Got root permission."`
+if [[ ! -n $root_result ]]; then
+    echo "Sorry"
+    exit -1
+fi
+
 $ODL_HOME/bin/start
 echo "Starting Opendaylight Service"
 progress-bar 30
@@ -29,4 +44,4 @@ cd $WORK_HOME/alto-orchestrator/orchestrator
 $WORK_HOME/Env/unicorn/bin/python -m gunicorn -b 0.0.0.0:6666 app:app &
 
 echo "Starting Cross Domain Mininet"
-$WORK_HOME/xdom-mn/bin/xdom-mn -c $WORK_HOME/demo-utils/topology.json
+sudo $WORK_HOME/xdom-mn/bin/xdom-mn -c $WORK_HOME/demo-utils/topology.json
