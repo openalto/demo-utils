@@ -54,8 +54,8 @@ $UNICORN_PYTHON_INTERPRETER -m pip install -q gunicorn flask falcon pyzmq # TODO
 
 echo "Downloading OpenDaylight Oxygen SR3"
 cd $WORK_HOME
-curl https://nexus.opendaylight.org/content/repositories/public/org/opendaylight/integration/opendaylight/0.9.0/opendaylight-0.9.0.zip -o opendaylight-0.9.0.zip
-unzip opendaylight-0.9.0.zip && mv opendaylight-0.9.0 opendaylight
+curl https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.8.2/karaf-0.8.2.zip -o karaf-0.8.2.zip
+unzip karaf-0.8.2.zip && mv karaf-0.8.2 opendaylight
 echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> ~/.bashrc
 echo "export ODL_HOME=$WORK_HOME/opendaylight" >> ~/.bashrc
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
@@ -66,7 +66,7 @@ $ODL_HOME/bin/start
 progress-bar 30
 echo "feature:install odl-openflowplugin-flow-services" | $ODL_HOME/bin/client -b
 echo "feature:install odl-openflowplugin-southbound" | $ODL_HOME/bin/client -b
-echo "Installing alto" # TODO:
+echo "feature:install odl-alto-basic" | $ODL_HOME/bin/client -b
 
 echo "Installing alto-domain-agent"
 cd $WORK_HOME
@@ -87,7 +87,7 @@ echo "Installing cross domain mininet"
 cd $WORK_HOME
 git clone --depth=1 https://github.com/openalto/xdom-mn
 cd xdom-mn
-sudo pip install -r requirements.txt # Using system python2
+sudo pip install -q -r requirements.txt # Using system python2
 sudo ./setup.py install
 echo "export XDOMMN_HOME=$WORK_HOME/xdom-mn" >> ~/.bashrc
 XDOMMN_HOME=$WORK_HOME/xdom-mn
