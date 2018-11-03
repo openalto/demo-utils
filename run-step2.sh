@@ -16,7 +16,7 @@ progress-bar() {
 }
 
 echo "Mininet pingall"
-$WORK_HOME/Env/unicorn/bin/python $WORK_HOME/demo-utils/mock_zmq.py pingall
+$WORK_HOME/Env/unicorn/bin/python $WORK_HOME/demo-utils/tools/mock_zmq.py pingall
 progress-bar 10
 
 echo "Configure networks"
