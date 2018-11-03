@@ -52,7 +52,7 @@ echo "export UNICORN_PYTHON_INTERPRETER=$WORK_HOME/Env/unicorn/bin/python" >> ~/
 echo "Installing python packages to unicorn virtualenv"
 $UNICORN_PYTHON_INTERPRETER -m pip install -q gunicorn flask falcon pyzmq # TODO: complete this
 
-echo "Downloading OpenDaylight Oxygen SR3"
+echo "Downloading OpenDaylight Oxygen SR2"
 cd $WORK_HOME
 curl https://nexus.opendaylight.org/content/repositories/opendaylight.release/org/opendaylight/integration/karaf/0.8.2/karaf-0.8.2.zip -o karaf-0.8.2.zip
 unzip karaf-0.8.2.zip && mv karaf-0.8.2 opendaylight
@@ -61,9 +61,10 @@ echo "export ODL_HOME=$WORK_HOME/opendaylight" >> ~/.bashrc
 JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ODL_HOME=$WORK_HOME/opendaylight
 
-echo "Installing openflow plugin"
+echo "Waiting for ODL server on"
 $ODL_HOME/bin/start
 progress-bar 30
+echo "Installing openflow plugin and alto-basic ..."
 echo "feature:install odl-openflowplugin-flow-services" | $ODL_HOME/bin/client -b
 echo "feature:install odl-openflowplugin-southbound" | $ODL_HOME/bin/client -b
 echo "feature:install odl-alto-basic" | $ODL_HOME/bin/client -b
