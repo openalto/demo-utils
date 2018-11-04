@@ -68,6 +68,7 @@ echo "Installing openflow plugin and alto-basic ..."
 echo "feature:install odl-openflowplugin-flow-services" | $ODL_HOME/bin/client -b
 echo "feature:install odl-openflowplugin-southbound" | $ODL_HOME/bin/client -b
 echo "feature:install odl-alto-basic" | $ODL_HOME/bin/client -b
+echo "feature:install odl-l2switch-all" | $ODL_HOME/bin/client -b
 
 echo "Installing alto-domain-agent"
 cd $WORK_HOME
