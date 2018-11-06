@@ -69,6 +69,8 @@ echo "feature:install odl-openflowplugin-flow-services" | $ODL_HOME/bin/client -
 echo "feature:install odl-openflowplugin-southbound" | $ODL_HOME/bin/client -b
 echo "feature:install odl-alto-basic" | $ODL_HOME/bin/client -b
 echo "feature:install odl-l2switch-all" | $ODL_HOME/bin/client -b
+echo "kar:install https://raw.githubusercontent.com/openalto/demo-utils/sc18-demo-ec2/bwmonitor-feature/odl-alto-bwmonitor-0.1.2.kar" | $ODL_HOME/bin/client -b
+echo "feature:install odl-alto-bwmonitor" | $ODL_HOME/bin/client -b
 
 echo "Installing alto-domain-agent"
 cd $WORK_HOME
