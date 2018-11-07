@@ -15,7 +15,9 @@ progress-bar() {
 }
 
 WORK_HOME=$HOME
-ssh -t ubuntu@$SITE_A_IP $WORK_HOME/opendaylight/bin/start
+#ssh -t ubuntu@$SITE_A_IP $ODL_HOME/bin/start
+echo "ATTENTION: For now, we cannot start opendaylight remotely. Please login to the server and start the opendaylight manually."
+progress-bar 10
 
 # This script shouldn't be called by root
 username=`whoami`
