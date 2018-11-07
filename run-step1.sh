@@ -33,7 +33,7 @@ fi
 
 $ODL_HOME/bin/start
 echo "Starting Opendaylight Service"
-progress-bar 30
+progress-bar 60
 
 echo "Starting Alto-domain-agent"
 cd $WORK_HOME/alto-domain-agent
@@ -41,7 +41,7 @@ nohup mvn jetty:run &
 
 echo "Starting orchestrator"
 cd $WORK_HOME/alto-orchestrator/orchestrator
-$WORK_HOME/Env/unicorn/bin/python -m gunicorn -b 0.0.0.0:6666 app:app &
+$WORK_HOME/Env/unicorn/bin/gunicorn -b 0.0.0.0:6666 app:app &
 
 echo "Starting Cross Domain Mininet"
 sudo $WORK_HOME/xdom-mn/bin/xdom-mn -c $WORK_HOME/demo-utils/topology.json
