@@ -13,3 +13,6 @@ sudo kill $(ps aux | grep jetty | awk '{print $2}')
 
 # Stop UnicornUI and orchestrator
 sudo kill $(ps aux | grep gunicorn | awk '{print $2}')
+
+# Stop opendaylight of remote
+ssh -t ubuntu@$SITE_A_IP $'kill -9 $(ps aux | grep karaf | awk \'{print $2}\')'

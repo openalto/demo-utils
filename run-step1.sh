@@ -15,6 +15,7 @@ progress-bar() {
 }
 
 WORK_HOME=$HOME
+ssh -t ubuntu@$SITE_A_IP $WORK_HOME/opendaylight/bin/start
 
 # This script shouldn't be called by root
 username=`whoami`
