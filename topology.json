@@ -3,7 +3,7 @@
         "siteA": {
             "controller": {
                 "name": "c0",
-                "ip": "127.0.0.1",
+                "ip": "52.14.213.248",
                 "port": 6633
             },
             "switches": {
@@ -22,7 +22,7 @@
             "controller": {
                 "name": "c1",
                 "ip": "127.0.0.1",
-                "port": 6634
+                "port": 6633
             },
             "switches": {
                 "sw1": { "class": "OVSSwitch" }
@@ -38,7 +38,7 @@
             "controller": {
                 "name": "c1",
                 "ip": "127.0.0.1",
-                "port": 6634
+                "port": 6633
             },
             "switches": {
                 "sw1": { "class": "OVSSwitch" },
