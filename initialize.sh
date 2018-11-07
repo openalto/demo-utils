@@ -16,8 +16,6 @@ progress-bar() {
 }
 
 WORK_HOME=$HOME
-SITE_A_IP=52.14.213.248
-echo "export SITE_A_IP=$SITE_A_IP" >> ~/.bashrc
 
 # This script shouldn't be called by root
 username=`whoami`
