@@ -76,6 +76,7 @@ echo "Installing alto-domain-agent"
 cd $WORK_HOME
 git clone --depth=1 https://github.com/openalto/alto-domain-agent
 cd alto-domain-agent && mvn clean package -T 4 -DskipTests
+curl http://central.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.4.9.v20180320/jetty-runner-9.4.9.v20180320.jar -o jetty-runner.jar
 
 echo "Installing unicorn orchestrator"
 cd $WORK_HOME
@@ -95,3 +96,23 @@ sudo pip install -q -r requirements.txt # Using system python2
 sudo ./setup.py install
 echo "export XDOMMN_HOME=$WORK_HOME/xdom-mn" >> ~/.bashrc
 XDOMMN_HOME=$WORK_HOME/xdom-mn
+
+# Put configs in right place
+echo "Putting configs in right palce"
+# unicorn1
+cp sfp-config/unicorn1/initial-rib.json ~/initial-rib.json # SFP
+cp agent-config/orchestrators.json /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
+cp agent-config/web.xml /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
+cp agent-config/sc18.json /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/adapter/sc18.json
+
+# unicorn2
+scp sfp-config/unicorn2/initial-rib.json unicorn2:~/initial-rib.json # SFP
+scp agent-config/orchestrators.json unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
+scp agent-config/web.xml unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
+scp agent-config/sc18.json unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/adapter/sc18.json
+
+# unicorn3
+scp sfp-config/unicorn3/initial-rib.json unicorn3:~/initial-rib.json # SFP
+scp agent-config/orchestrators.json unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
+scp agent-config/web.xml unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
+scp agent-config/sc18.json unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/adapter/sc18.json
