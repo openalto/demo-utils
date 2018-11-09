@@ -38,7 +38,7 @@ pushd $WORK_HOME
 echo "Installing needed packages"
 sudo apt-get -qq update
 sudo apt-get install -qq -y make build-essential python3-pip python-dev python-pip \
-virtualenv virtualenvwrapper maven openjdk-8-jdk unzip
+virtualenv virtualenvwrapper maven openjdk-8-jdk unzip jq
 
 # Install mininet
 git clone  --depth=1 --single-branch https://github.com/mininet/mininet && cd mininet && ./util/install.sh
