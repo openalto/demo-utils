@@ -74,7 +74,7 @@ echo "feature:install odl-alto-bwmonitor" | $ODL_HOME/bin/client -b
 
 echo "Installing alto-domain-agent"
 cd $WORK_HOME
-git clone --depth=1 https://github.com/openalto/alto-domain-agent
+git clone --depth=1 -b sc18-demo https://github.com/openalto/alto-domain-agent
 cd alto-domain-agent && mvn clean package -T 4 -DskipTests
 curl http://central.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.4.9.v20180320/jetty-runner-9.4.9.v20180320.jar -o jetty-runner.jar
 

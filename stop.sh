@@ -16,4 +16,6 @@ sudo kill $(ps aux | grep gunicorn | awk '{print $2}')
 
 # Stop opendaylight of remote
 ssh -t ubuntu@unicorn2 $'kill -9 $(ps aux | grep karaf | awk \'{print $2}\')'
+ssh -t ubuntu@unicorn2 $'kill -9 $(ps aux | grep jetty | awk \'{print $2}\')'
 ssh -t ubuntu@unicorn3 $'kill -9 $(ps aux | grep karaf | awk \'{print $2}\')'
+ssh -t ubuntu@unicorn3 $'kill -9 $(ps aux | grep jetty | awk \'{print $2}\')'
