@@ -1,0 +1,18 @@
+sudo ovs-ofctl -O OpenFlow13 add-flow s1 ip,nw_dst=10.0.1.101,actions=output:1
+sudo ovs-ofctl -O OpenFlow13 add-flow s1 ip,nw_dst=10.0.1.102,actions=output:2
+sudo ovs-ofctl -O OpenFlow13 add-flow s1 ip,nw_src=10.0.1.101,actions=output:3
+sudo ovs-ofctl -O OpenFlow13 add-flow s1 ip,nw_src=10.0.1.102,actions=output:3
+
+sudo ovs-ofctl -O OpenFlow13 add-flow s4 ip,nw_dst=10.0.2.201,actions=output:1
+sudo ovs-ofctl -O OpenFlow13 add-flow s4 ip,nw_dst=10.0.1.101,actions=output:2
+sudo ovs-ofctl -O OpenFlow13 add-flow s4 ip,nw_dst=10.0.1.102,actions=output:2
+sudo ovs-ofctl -O OpenFlow13 add-flow s4 ip,nw_dst=10.0.3.202,actions=output:3
+
+sudo ovs-ofctl -O OpenFlow13 add-flow s6 ip,nw_dst=10.0.3.202,actions=output:1
+sudo ovs-ofctl -O OpenFlow13 add-flow s6 ip,nw_src=10.0.3.202,actions=output:2
+
+sudo ovs-ofctl -O OpenFlow13 add-flow s7 ip,nw_src=10.0.3.202,actions=output:1
+sudo ovs-ofctl -O OpenFlow13 add-flow s7 ip,nw_dst=10.0.3.202,actions=output:2
+
+sudo ovs-ofctl -O OpenFlow13 add-flow s8 ip,nw_src=10.0.3.202,actions=output:1
+sudo ovs-ofctl -O OpenFlow13 add-flow s8 ip,nw_dst=10.0.3.202,actions=output:2
