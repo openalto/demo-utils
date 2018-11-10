@@ -35,7 +35,7 @@
     <context-param>
         <description>Base uri for controller restful api</description>
         <param-name>adapter.baseUri</param-name>
-        <param-value>http://localhost:8181</param-value>
+        <param-value>http://unicorn1:8181</param-value>
     </context-param>
     <context-param>
         <description>Authentication username for controller restful api</description>

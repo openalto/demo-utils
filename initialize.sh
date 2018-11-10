@@ -101,18 +101,18 @@ XDOMMN_HOME=$WORK_HOME/xdom-mn
 echo "Putting configs in right palce"
 # unicorn1
 cp sfp-config/unicorn1/initial-rib.json ~/initial-rib.json # SFP
-cp agent-config/orchestrators.json /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
-cp agent-config/web.xml /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
+cp agent-config/unicorn1/orchestrators.json /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
+cp agent-config/unicorn1/web.xml /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
 cp agent-config/sc18.json /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/adapter/sc18.json
 
 # unicorn2
 scp sfp-config/unicorn2/initial-rib.json unicorn2:~/initial-rib.json # SFP
-scp agent-config/orchestrators.json unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
-scp agent-config/web.xml unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
+scp agent-config/unicorn2/orchestrators.json unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
+scp agent-config/unicorn2/web.xml unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
 scp agent-config/sc18.json unicorn2:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/adapter/sc18.json
 
 # unicorn3
 scp sfp-config/unicorn3/initial-rib.json unicorn3:~/initial-rib.json # SFP
-scp agent-config/orchestrators.json unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
-scp agent-config/web.xml unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
+scp agent-config/unicorn3/orchestrators.json unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators
+scp agent-config/unicorn3/web.xml unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/web.xml
 scp agent-config/sc18.json unicorn3:/home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/adapter/sc18.json
