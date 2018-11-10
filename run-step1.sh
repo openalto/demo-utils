@@ -40,7 +40,7 @@ progress-bar 60
 
 echo "Starting Alto-domain-agent"
 cd $WORK_HOME/alto-domain-agent
-nohup mvn jetty:run &
+nohup java -jar jetty-runner.jar target/unicorn-server &
 
 echo "Starting orchestrator"
 cd $WORK_HOME/alto-orchestrator/orchestrator
