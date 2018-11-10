@@ -1,0 +1,16 @@
+{
+  "domain-name": "Domain-2",
+  "domain-ip": "127.0.0.1",
+  "http-port": 9000,
+  "control-url": "/experimental/v1/unicorn/updates",
+  "deploy-url": "/experimental/v1/unicorn/deploys",
+  "hosts": [
+    {
+      "host-ip": "10.0.2.201",
+      "management-ip": "10.0.2.251"
+    }
+  ],
+  "ingress-points": [
+    "10.0.1.200"
+  ]
+}
