@@ -48,3 +48,6 @@ $WORK_HOME/Env/unicorn/bin/gunicorn -b 0.0.0.0:6666 app:app &
 
 echo "Starting Cross Domain Mininet"
 sudo $WORK_HOME/xdom-mn/bin/xdom-mn -c $WORK_HOME/demo-utils/topology.json
+
+echo "Starting deploy routes"
+sudo $WORK_HOME/demo-utils/add-flows.sh
