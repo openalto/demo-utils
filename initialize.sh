@@ -97,8 +97,16 @@ sudo ./setup.py install
 echo "export XDOMMN_HOME=$WORK_HOME/xdom-mn" >> ~/.bashrc
 XDOMMN_HOME=$WORK_HOME/xdom-mn
 
+echo "Installing alto-nova"
+cd $WORK_HOME
+git clone --depth=1 https://github.com/openalto/alto-nova
+cd alto-nova
+python3 -m pip install -q -r requirements.txt
+sudo python3 setup.py install 
+
 # Put configs in right place
 echo "Putting configs in right palce"
+cd $WORK_HOME/demo-utils
 # unicorn1
 cp sfp-config/unicorn1/initial-rib.json ~/initial-rib.json # SFP
 cp agent-config/orchestrators.json /home/ubuntu/alto-domain-agent/target/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json # Orchestrators

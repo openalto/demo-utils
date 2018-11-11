@@ -6,48 +6,24 @@
       {
         "id": 1,
         "priority": 1,
-        "flow-spec": {
-          "src-ip": "10.0.1.101/32",
-          "dst-ip": "10.0.2.201/32"
-        },
+        "flow-spec": { "src-ip": "10.0.1.101/32", "dst-ip": "10.0.2.201/32" },
         "links": [
-          {
-            "link": "host:00:00:00:00:00:01/openflow:1:1"
-          },
-          {
-            "link": "openflow:1:3"
-          },
-          {
-            "link": "openflow:4:1/host:00:00:00:00:00:03"
-          }
+          { "link": "host:00:00:00:00:00:01/openflow:1:1" },
+          { "link": "openflow:1:3" },
+          { "link": "openflow:4:1/host:00:00:00:00:00:03" }
         ]
       },
       {
         "id": 2,
         "priority": 2,
-        "flow-spec": {
-          "src-ip": "10.0.1.102/32",
-          "dst-ip": "10.0.3.202/32"
-        },
+        "flow-spec": { "src-ip": "10.0.1.102/32", "dst-ip": "10.0.3.202/32" },
         "links": [
-          {
-            "link": "host:00:00:00:00:00:02/openflow:1:2"
-          },
-          {
-            "link": "openflow:1:3"
-          },
-          {
-            "link": "openflow:4:3"
-          },
-          {
-            "link": "openflow:6:1"
-          },
-          {
-            "link": "openflow:7:2"
-          },
-          {
-            "link": "openflow:8:2/host:00:00:00:00:00:04"
-          }
+          { "link": "host:00:00:00:00:00:02/openflow:1:2" },
+          { "link": "openflow:1:3" },
+          { "link": "openflow:4:3" },
+          { "link": "openflow:6:1" },
+          { "link": "openflow:7:2" },
+          { "link": "openflow:8:2/host:00:00:00:00:00:04" }
         ]
       }
     ]
@@ -59,48 +35,24 @@
       {
         "id": 1,
         "priority": 1,
-        "flow-spec": {
-          "src-ip": "10.0.1.101/32",
-          "dst-ip": "10.0.2.201/32"
-        },
+        "flow-spec": { "src-ip": "10.0.1.101/32", "dst-ip": "10.0.2.201/32" },
         "links": [
-          {
-            "link": "host:00:00:00:00:00:01/openflow:1:1"
-          },
-          {
-            "link": "openflow:1:3"
-          },
-          {
-            "link": "openflow:4:1/host:00:00:00:00:00:03"
-          }
+          { "link": "host:00:00:00:00:00:01/openflow:1:1" },
+          { "link": "openflow:1:3" },
+          { "link": "openflow:4:1/host:00:00:00:00:00:03" }
         ]
       },
       {
         "id": 2,
         "priority": 2,
-        "flow-spec": {
-          "src-ip": "10.10.10.10/32",
-          "dst-ip": "10.10.10.10/32"
-        },
+        "flow-spec": { "src-ip": "10.0.1.102/32", "dst-ip": "10.0.3.202/32" },
         "links": [
-          {
-            "link": "host:00:00:00:00:00:02/openflow:1:2"
-          },
-          {
-            "link": "openflow:1:3"
-          },
-          {
-            "link": "openflow:4:3"
-          },
-          {
-            "link": "openflow:6:1"
-          },
-          {
-            "link": "openflow:7:2"
-          },
-          {
-            "link": "openflow:8:2/host:00:00:00:00:00:04"
-          }
+          { "link": "host:00:00:00:00:00:02/openflow:1:2" },
+          { "link": "openflow:1:3" },
+          { "link": "openflow:4:3" },
+          { "link": "openflow:6:1" },
+          { "link": "openflow:7:2" },
+          { "link": "openflow:8:2/host:00:00:00:00:00:04" }
         ]
       }
     ]
@@ -112,48 +64,24 @@
       {
         "id": 1,
         "priority": 1,
-        "flow-spec": {
-          "src-ip": "10.0.1.101/32",
-          "dst-ip": "10.0.2.201/32"
-        },
+        "flow-spec": { "src-ip": "10.0.1.101/32", "dst-ip": "10.0.2.201/32" },
         "links": [
-          {
-            "link": "host:00:00:00:00:00:01/openflow:1:1"
-          },
-          {
-            "link": "openflow:1:3"
-          },
-          {
-            "link": "openflow:4:1/host:00:00:00:00:00:03"
-          }
+          { "link": "host:00:00:00:00:00:01/openflow:1:1" },
+          { "link": "openflow:1:3" },
+          { "link": "openflow:4:1/host:00:00:00:00:00:03" }
         ]
       },
       {
         "id": 2,
         "priority": 2,
-        "flow-spec": {
-          "src-ip": "10.10.10.10/32",
-          "dst-ip": "10.10.10.10/32"
-        },
+        "flow-spec": { "src-ip": "10.0.1.102/32", "dst-ip": "10.0.3.202/32" },
         "links": [
-          {
-            "link": "host:00:00:00:00:00:02/openflow:1:2"
-          },
-          {
-            "link": "openflow:1:3"
-          },
-          {
-            "link": "openflow:4:3"
-          },
-          {
-            "link": "openflow:6:1"
-          },
-          {
-            "link": "openflow:7:2"
-          },
-          {
-            "link": "openflow:8:2/host:00:00:00:00:00:04"
-          }
+          { "link": "host:00:00:00:00:00:02/openflow:1:2" },
+          { "link": "openflow:1:3" },
+          { "link": "openflow:4:3" },
+          { "link": "openflow:6:1" },
+          { "link": "openflow:7:2" },
+          { "link": "openflow:8:2/host:00:00:00:00:00:04" }
         ]
       }
     ]
