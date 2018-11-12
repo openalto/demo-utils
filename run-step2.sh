@@ -20,4 +20,7 @@ $WORK_HOME/Env/unicorn/bin/python $WORK_HOME/demo-utils/tools/mock_zmq.py pingal
 progress-bar 10
 
 echo "Configure networks"
-# TODO
+./config-all.sh
+
+echo "Starting SFP"
+$WORK_HOME/Env/unicorn/bin/gunicorn -b 0.0.0.0:8399 -w 4 sfp:app

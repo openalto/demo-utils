@@ -104,6 +104,17 @@ cd alto-nova
 python3 -m pip install -q -r requirements.txt
 sudo python3 setup.py install 
 
+echo "Installing sfp-impl"
+cd $WORK_HOME
+git clone --depth=1 -b dummy https://github.com/openalto/sfp-impl
+cd sfp-impl
+$UNICORN_PYTHON_INTERPRETER -m pip install -q -r requirements.txt
+$UNICORN_PYTHON_INTERPRETER setup.py install
+
+echo "Add some alias"
+alias gunicorn=$WORK_HOME/Env/unicorn/bin/gunicorn
+echo "alias gunicorn=$WORK_HOME/Env/unicorn/bin/gunicorn" >> ~/.bashrc
+
 # Put configs in right place
 echo "Putting configs in right palce"
 cd $WORK_HOME/demo-utils

@@ -27,7 +27,9 @@
           { "link": "openflow:8:2/host:00:00:00:00:00:04" }
         ]
       }
-    ]
+    ],
+    "ingress-point": null,
+    "egress-point": "openflow:1:3"
   },
   "Domain-2": {
     "path": {},
@@ -57,7 +59,9 @@
           { "link": "openflow:8:2/host:00:00:00:00:00:04" }
         ]
       }
-    ]
+    ],
+    "ingress-point": "openflow:4:2",
+    "egress-point": "openflow:4:3"
   },
   "Domain-3": {
     "path": {},
@@ -87,6 +91,8 @@
           { "link": "openflow:8:2/host:00:00:00:00:00:04" }
         ]
       }
-    ]
+    ],
+    "ingress-point": "openflow:6:2",
+    "egress-point": null
   }
 }
