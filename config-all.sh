@@ -1,13 +1,13 @@
 #!/bin/sh
 
-function get_all_ports() {
+function get_all_ports {
     hostname=$1
     http_port=$2
     ports=$(curl -s -u admin:admin http://$hostname:$http_port/restconf/operational/opendaylight-inventory:nodes | jq -r '.nodes.node[]."node-connector"[].id|select(endswith("LOCAL")|not)')
     echo $ports
 }
 
-function subscribe_port() {
+function subscribe_port {
     hostname=$1
     http_port=$2
 
@@ -18,7 +18,7 @@ function subscribe_port() {
     done
 }
 
-function config_capacity() {
+function config_capacity {
     IP=$1
     HTTP_PORT=$2
     CAPACITY=$3
