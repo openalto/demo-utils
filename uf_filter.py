@@ -10,8 +10,8 @@ def filtered_flow(nodes, head='#UF'):
             table_id = t['id']
             cookies = []
             for f in t.get('flow', []):
-                if f['id'].startswith(head) and f.get('cookies', 'unknown') not in cookies:
-                    cookies.append(f.get('cookies', 'unknown'))
+                if f['id'].startswith(head) and f.get('cookie', 'unknown') not in cookies:
+                    cookies.append(f.get('cookie', 'unknown'))
             for cookie in cookies:
                 sys.stdout.write("%s %d %s\n" % (node_id, table_id, cookie))
 
