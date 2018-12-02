@@ -7,9 +7,10 @@ services:
     container_name: unicorn-server
     ports:
     - "6633:6633"
+    - "8181:8181"
     - "80:9000"
     volumes:
     - "config/web.xml:/opt/unicorn-server/WEB-INF/web.xml"
     - "config/server.json:/opt/unicorn-server/WEB-INF/classes/server.json"
-    - "config/adapter.json:/opt/unicorn-server/WEB-INF/classes/adapter/mock.json"
-    - "config/orchestrator.json:/opt/unicorn-server/WEB-INF/classes/orchestrator/orchestrator.json"
+    - "config/mock.json:/opt/unicorn-server/WEB-INF/classes/adapter/mock.json"
+    - "config/orchestrators.json:/opt/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json"
