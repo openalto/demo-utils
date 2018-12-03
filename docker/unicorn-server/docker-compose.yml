@@ -2,15 +2,15 @@ version: '2'
 
 services:
   unicorn-server:
-    image: fno2010/unicorn-server
+    image: fno2010/unicorn-server:odl-boron-sr4
     hostname: unicorn-server
     container_name: unicorn-server
     ports:
     - "6633:6633"
     - "8181:8181"
-    - "80:9000"
+    - "9000:80"
     volumes:
-    - "config/web.xml:/opt/unicorn-server/WEB-INF/web.xml"
-    - "config/server.json:/opt/unicorn-server/WEB-INF/classes/server.json"
-    - "config/mock.json:/opt/unicorn-server/WEB-INF/classes/adapter/mock.json"
-    - "config/orchestrators.json:/opt/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json"
+    - "./config/web.xml:/opt/unicorn-server/WEB-INF/web.xml"
+    - "./config/server.json:/opt/unicorn-server/WEB-INF/classes/server.json"
+    - "./config/mock.json:/opt/unicorn-server/WEB-INF/classes/adapter/mock.json"
+    - "./config/orchestrators.json:/opt/unicorn-server/WEB-INF/classes/orchestrator/orchestrators.json"
