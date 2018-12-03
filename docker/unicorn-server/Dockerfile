@@ -6,7 +6,7 @@ RUN yum -y --setopt=tsflags=nodocs update \
     && yum -y --setopt=tsflags=nodocs install git python34-devel python34-setuptools python34-pip \
         python-devel python-setuptools python2-pip java-1.8.0-openjdk-devel \
     && echo 'Downloading maven...' \
-    && curl -sSLO http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz \
+    && curl -sSLO http://www-us.apache.org/dist/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz \
     && echo 'Done' \
     && tar -zxf apache-maven-3.3.9-bin.tar.gz -C /opt \
     && ln -s /opt/apache-maven-3.3.9/bin/mvn /usr/bin/mvn \
