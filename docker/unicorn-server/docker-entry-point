@@ -26,5 +26,7 @@ for x in {1..100} ; do
     sleep $step
 done ; echo
 
+curl -v -u admin:admin -X PUT -H 'Content-type: application/json' -d '{"alto-pathmanager:path-manager": {"paths": []}}' http://localhost:8181/restconf/config/alto-pathmanager:path-manager
+
 # Start unicorn-server
 java -jar /opt/jetty-runner.jar --port 80 --log /var/log/jetty.log /opt/unicorn-server
