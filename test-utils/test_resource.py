@@ -59,5 +59,7 @@ def test_resource_query(hostname):
 
 if __name__ == '__main__':
     #test_bwmonitor_subscribe("unicorn1", ["host:00:00:00:00:00:01/openflow:1:1"])
-    #test_bwmonitor_query("unicorn1", port_ids=["host:00:00:00:00:00:01/openflow:1:1"])
+    # test_bwmonitor_query("unicorn1", port_ids=["openflow:1:1"])
     test_resource_query("unicorn1")
+    test_resource_query("unicorn2")
+    test_resource_query("unicorn3")
