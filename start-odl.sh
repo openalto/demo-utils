@@ -1,4 +1,5 @@
-# Start Opendaylight
+# This script is for configuring the EC2 server for sc18 demo
+
 progress-bar() {
   local duration=${1}
     already_done() { for ((done=0; done<$elapsed; done++)); do printf "▇"; done }
@@ -15,9 +16,6 @@ progress-bar() {
 }
 
 WORK_HOME=$HOME
-#ssh -t ubuntu@$SITE_A_IP $ODL_HOME/bin/start
-echo "ATTENTION: For now, we cannot start opendaylight remotely. Please login to the server and start the opendaylight manually."
-progress-bar 10
 
 # This script shouldn't be called by root
 username=`whoami`
@@ -34,20 +32,14 @@ if [[ ! -n $root_result ]]; then
     exit -1
 fi
 
+echo "Waiting for ODL server on"
 $ODL_HOME/bin/start
-echo "Starting Opendaylight Service"
-progress-bar 60
+progress-bar 30
+echo "Installing openflow plugin and alto-basic ..."
+echo "feature:install odl-openflowplugin-flow-services" | $ODL_HOME/bin/client -b
+echo "feature:install odl-openflowplugin-southbound" | $ODL_HOME/bin/client -b
+echo "feature:install odl-alto-basic" | $ODL_HOME/bin/client -b
+echo "feature:install odl-l2switch-all" | $ODL_HOME/bin/client -b
+echo "kar:install https://raw.githubusercontent.com/openalto/demo-utils/sc18-demo-ec2/bwmonitor-feature/odl-alto-bwmonitor-0.1.2.kar" | $ODL_HOME/bin/client -b
+echo "feature:install odl-alto-bwmonitor" | $ODL_HOME/bin/client -b
 
-echo "Starting orchestrator"
-cd $WORK_HOME/alto-orchestrator/orchestrator
-nohup $WORK_HOME/Env/unicorn/bin/gunicorn -b 0.0.0.0:6666 app:app &
-
-echo "Starting Alto-domain-agent"
-cd $WORK_HOME/alto-domain-agent
-nohup java -jar jetty-runner.jar target/unicorn-server &
-
-echo "Starting Cross Domain Mininet"
-sudo $WORK_HOME/xdom-mn/bin/xdom-mn -c $WORK_HOME/demo-utils/topology.json
-
-echo "Starting deploy routes"
-sudo $WORK_HOME/demo-utils/add-flows.sh

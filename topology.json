@@ -3,7 +3,7 @@
         "siteA": {
             "controller": {
                 "name": "c0",
-                "ip": "52.14.213.248",
+                "ip": "18.222.182.206",
                 "port": 6633
             },
             "switches": {
@@ -21,7 +21,7 @@
         "siteB": {
             "controller": {
                 "name": "c1",
-                "ip": "18.223.164.30",
+                "ip": "18.222.182.43",
                 "port": 6633
             },
             "switches": {
@@ -36,8 +36,8 @@
         },
         "siteC": {
             "controller": {
-                "name": "c1",
-                "ip": "18.223.164.30",
+                "name": "c2",
+                "ip": "18.221.26.88",
                 "port": 6633
             },
             "switches": {

@@ -80,12 +80,12 @@ curl http://central.maven.org/maven2/org/eclipse/jetty/jetty-runner/9.4.9.v20180
 
 echo "Installing unicorn orchestrator"
 cd $WORK_HOME
-git clone -b afm2018-case3 --depth=1 https://github.com/openalto/alto-orchestrator
+git clone -b sc18 --depth=1 https://github.com/openalto/alto-orchestrator
 $UNICORN_PYTHON_INTERPRETER -m pip install -q -r alto-orchestrator/requirements.txt
 
 echo "Installing UnicornUI"
 cd $WORK_HOME
-git clone --depth=1 https://github.com/openalto/UnicornUI
+git clone --depth=1 -b sc18-demo https://github.com/openalto/UnicornUI
 $UNICORN_PYTHON_INTERPRETER -m pip install -q -r UnicornUI/requirements.txt
 
 echo "Installing cross domain mininet"

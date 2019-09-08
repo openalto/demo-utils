@@ -32,7 +32,9 @@ function config_capacity {
 
 subscribe_port unicorn1 8181
 subscribe_port unicorn2 8181
+subscribe_port unicorn3 8181
 config_capacity unicorn1 8181 100000 $(get_all_ports unicorn1 8181)
 config_capacity unicorn2 8181 100000 $(get_all_ports unicorn2 8181)
+config_capacity unicorn3 8181 100000 $(get_all_ports unicorn3 8181)
 config_capacity unicorn2 8181 40000 openflow:4:1
 config_capacity unicorn2 8181 40000 openflow:8:2
