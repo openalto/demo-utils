@@ -1,4 +1,10 @@
-# Some Utility Scripts for Demo Setup
+# Docker-based All-in-One Mercator Demo Setup
+
+| Component | Codebase |
+|:----------|:---------|
+| Mercator Domain Server | <https://github.com/openalto/alto-domain-agent> |
+| Mercator Orchestrator | <https://github.com/openalto/alto-orchestrator> |
+| Nova Resource State Abstraction Engine | <https://github.com/openalto/alto-nova> |
 
 ## Install Dependencies
 
@@ -56,4 +62,27 @@ optional arguments:
                         SSH login name of the SDN controller.
   -P PASSWORD, --password PASSWORD
                         SSH password of the SDN controller.
+```
+
+## Reference
+
+If you use Mercator, please cite the [journal paper](https://ieeexplore.ieee.org/document/8756056) with the following BibTex entry:
+
+```
+Xiang, Qiao, Jingxuan Jensen Zhang, Xin Tony Wang, Yang Jace Liu, Chin Guok, Franck Le, John MacAuley, Harvey Newman, and Y. Richard Yang.
+Toward Fine-Grained, Privacy-Preserving, Efficient Multi-Domain Network Resource Discovery.
+IEEE Journal on Selected Areas in Communications 37, no. 8 (2019): 1924-1940.
+
+@article{Mercator_JSAC19,
+ author = {Q. Xiang and J. J. Zhang and X. T. Wang and Y. J. Liu and C. Guok and F. Le and J. MacAuley and H. Newman and Y. R. Yang},
+ doi = {10.1109/JSAC.2019.2927073},
+ issn = {1558-0008},
+ journal = {IEEE Journal on Selected Areas in Communications},
+ month = {Aug},
+ number = {8},
+ pages = {1924-1940},
+ title = {Toward Fine-Grained, Privacy-Preserving, Efficient Multi-Domain Network Resource Discovery},
+ volume = {37},
+ year = {2019}
+}
 ```
